@@ -140,11 +140,11 @@ nav ul li {
   width: 900px;
   justify-content: center;
   margin: 15vh auto;
-  border: 1px solid yellow;
+  border: 0px solid yellow;
 }
 
 .hero-logo {
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   width: 400px;
   transform: translateX(205px);
   animation: move-left ease-in 1s 2s forwards; 
@@ -180,37 +180,42 @@ nav ul li {
   float: right;
   opacity: 0;
   animation: brighten ease-in 1s 2.5s forwards;
-  padding: 125px 20px; 
-  border: 1px solid pink;
+  padding: 60px 20px 0 20px; 
+  border: 0px solid pink;
 }
 
 /* homepage: H2 animation */
 
 h2.front, h2.ux, h2.web, h2.data { 
-  position: absolute;
-  margin: *2rem 1rem;
+  position: relative;
+  margin: .2em 0em;
   overflow: hidden;
 	white-space: nowrap;
-  opacity: 0;
   background: white;
 }
 
-h2.front { 
-  box-shadow: .09em 0 0 var(--teal);
-	animation: caret .5s step-end infinite alternate,
-             type-remove-front 6.3s 2s steps(19, end) forwards
+h2.front {
+  width: 0;
+  box-shadow: .1em 0 0 var(--teal);
+  animation: caret .3s step-end infinite alternate,
+  hide-caret 0s 8.3s forwards,
+  type-front 6.3s 2s steps(19, end) forwards
 }
 
-h2.ux { 
-	box-shadow: .09em 0 0 var(--lime);
-	animation: caret .5s step-end infinite alternate,
-             type-remove-uxweb 3.7s 8.3s steps(11, end) forwards
+h2.ux {
+  width: 0; 
+	box-shadow: .1em 0 0 var(--lime);
+  animation: caret .3s step-end infinite alternate,
+             hide-caret 0s 12s forwards,
+             type-ux 3.7s 8.3s steps(11, end) forwards
 }
 
 h2.web { 
-	box-shadow: .09em 0 0 var(--pink);
-	animation: caret .5s step-end infinite alternate,
-             type-remove-uxweb 3.7s 12s steps(11, end) forwards
+  width: 0;
+	box-shadow: .1em 0 0 var(--pink);
+  animation: caret .3s step-end infinite alternate,
+            hide-caret 0s 16s forwards,
+            type-web 4s 12s steps(12, end) forwards
 }
 
 p.click {
@@ -229,33 +234,9 @@ p.click {
   }
 }
 
-@keyframes type-remove-front {
-  0% {
-    width: 0;
-    opacity: 1;
-  }
-  95% { 
-    width: 19ch;
-  }
-  100% {
-    width: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes type-remove-uxweb {
-  0% {
-    width: 0;
-    opacity: 1;
-  }
-  95% {
-    width: 11ch;
-  }
-  100% {
-    width: 0;
-    opacity: 1;
-  }
-}
+@keyframes type-front { to { width: 19ch }}
+@keyframes type-ux { to { width: 11ch }}
+@keyframes type-web { to { width: 12ch }}
 
 @keyframes caret { 
   50% { 
@@ -263,6 +244,11 @@ p.click {
   }
 }
 
+@keyframes hide-caret {
+  to {
+    box-shadow: none;
+  }
+}
 /* contact */
 
 
