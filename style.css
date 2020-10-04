@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+:root { /* color scheme */
+  --teal: #27AE96;
+  --lime: #CCE780;
+  --pink: #C36CA6;
+  --blue: #7ACCCC;
+}
+  
+* {
+  box-sizing: border-box; 
+  margin: 0;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 4.4em;
+}
+
+h2 {
+  font-family: 'Inconsolata';
+  font-weight: 600;
+  font-size: 2.8em;
+  color: #606060;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 2em;
+	padding: 0.5em 1.5em;
+  background-color: none;
+  border: 3px solid var(--blue);
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+.button:hover {
+  background-color: var(--blue);
+}
+
+html, body {
+  padding: 0em; 
+  background-color: #f1f1f1;
+  font: 16px 'Roboto Slab';
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  flex-grow: 1;
+}
+
+.logo { 
+  margin: 1em 2em;
+}
+
+.logo svg path {
+  opacity: 0;
+}
+
+.logo svg path.l {
+  animation: addColor linear 0.5s .5s forwards;
+}
+.logo svg path.o {
+  animation: addColor linear .5s 1s forwards;
+}
+.logo svg path.e {
+  animation: addColor linear .5s 1.5s forwards;
+}
+.logo svg path.s {
+  animation: addColor linear .5s 2s forwards;
+}
+
+@keyframes addColor {
+  to {
+    opacity: 1;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 7;
+  float: right;
+}
+
+nav ul li {
+  display: inline;
+  padding-right: 1.5em;
+}
+
+.menu-items {
+  font-size: 1.25em;
+  min-height: 55px;
+  line-height: 55px;
+  opacity: 0;
+  animation: appear 1s ease-in forwards;
+  margin: .8em 2em .8em 0;
+}
+
+
+.menu-item {
+  padding: 0 .4em .3em .4em;
+  border-bottom: .2em solid transparent;
+}
+
+
+.menu-item:hover {
+  border-bottom: 3px solid var(--teal);
+}
+
+.menu-icon {
+  opacity: 0;
+  animation: appear 1s ease-in forwards;
+  margin: 1em 2em;
+  min-height: 55px;
+  line-height: 55px;
+}
+
+.menu-icon i {
+  font-size: 1.75em; 
+}
+
+.hide {
+  display: none;
+}
+
+.hero {
+  display: flex;
+  width: 900px;
+  justify-content: center;
+  margin: 15vh auto;
+  border: 1px solid yellow;
+}
+
+.hero-logo {
+  border: 1px solid cyan;
+  width: 400px;
+  transform: translateX(205px);
+  animation: move-left ease-in 1s 2s forwards; 
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes move-left {
+  to {
+    transform-origin: left;
+    transform: scale(70%) translateX(53px);
+  }
+}
+
+.big-logo-l { opacity: 0.2; animation: brighten ease-in .5s forwards; }
+.big-logo-o { opacity: 0.2; animation: brighten ease-in .5s .5s forwards; }
+.big-logo-e { opacity: 0.2; animation: brighten ease-in .5s 1s forwards; }
+.big-logo-s { opacity: 0.2; animation: brighten ease-in .5s 1.5s forwards; }
+
+@keyframes brighten {
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-content {
+  position: relative;
+  right: 0;
+  opacity: 0;
+  animation: brighten ease-in 1s 2.5s forwards;
+  padding: 125px 20px; 
+  border: 1px solid pink;
+}
+
+/* homepage: H2 animation */
+
+h2.front, h2.ux, h2.web, h2.data { 
+  position: absolute;
+  margin: 0; /*2rem 1rem;*/
+  overflow: hidden;
+	white-space: nowrap;
+  opacity: 0;
+}
+
+h2.front { 
+	box-shadow: .09em 0 0 var(--teal);
+	animation: caret .5s step-end infinite alternate,
+             type-remove-front 9.5s 2s steps(20, end) forwards
+}
+
+h2.ux { 
+	box-shadow: .09em 0 0 var(--lime);
+	animation: caret .5s step-end infinite alternate,
+             type-remove-uxweb 5.5s 11.5s steps(12, end) forwards
+}
+
+h2.web { 
+	box-shadow: .09em 0 0 var(--pink);
+	animation: caret .5s step-end infinite alternate,
+             type-remove-uxweb 5.5s 17s steps(12, end) forwards
+}
+
+h2.data { 
+	box-shadow: .09em 0 0 var(--blue);
+	animation: caret .5s step-end infinite alternate,
+             type-remove-data 7s 22.5s steps(15, end) forwards
+}
+
+p.click {
+  opacity: 0;
+  font-size: 16px;
+  transform-origin: bottom center;
+  transform: translateY(120px);
+  animation: show 2s 22.5s ease-out forwards
+}
+
+@keyframes show {
+  to {
+    transform: translateY(0px);
+    opacity: 1; 
+  }
+}
+
+@keyframes type-remove-front {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  75% { 
+    width: 20ch;
+  }
+  100% {
+    width: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes type-remove-uxweb {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  75% {
+    width: 12ch;
+  }
+  100% {
+    width: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes type-remove-data {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  75% {
+    width: 15ch;
+  }
+  100% {
+    width: 0; 
+    opacity: 1;
+  }
+}
+
+
+@keyframes caret { 
+  50% { 
+    box-shadow: .2em 0 0 transparent;
+  }
+}
+
+/* contact */
+
+
+.email {
+  display: flex;
+  justify-content: center;
+  margin-top: 30vh;
+}
+
+.email p {
+  display: inline-block;
+  border-bottom: 5px solid var(--teal);
+  text-align: center;
+  font-size: 4em;
+}
