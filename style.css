@@ -22,7 +22,7 @@ h2 {
   font-family: 'Inconsolata';
   font-weight: 600;
   font-size: 2.8em;
-  color: #606060;
+/*  color: #606060; */
 }
 
 a {
@@ -176,7 +176,8 @@ nav ul li {
 
 .hero-content {
   position: relative;
-  right: 0;
+  width: 450px;
+  float: right;
   opacity: 0;
   animation: brighten ease-in 1s 2.5s forwards;
   padding: 125px 20px; 
@@ -187,42 +188,38 @@ nav ul li {
 
 h2.front, h2.ux, h2.web, h2.data { 
   position: absolute;
-  margin: 0; /*2rem 1rem;*/
+  margin: *2rem 1rem;
   overflow: hidden;
 	white-space: nowrap;
   opacity: 0;
+  background: white;
 }
 
 h2.front { 
-	box-shadow: .09em 0 0 var(--teal);
+  box-shadow: .09em 0 0 var(--teal);
 	animation: caret .5s step-end infinite alternate,
-             type-remove-front 9.5s 2s steps(20, end) forwards
+             type-remove-front 6.3s 2s steps(19, end) forwards
 }
 
 h2.ux { 
 	box-shadow: .09em 0 0 var(--lime);
 	animation: caret .5s step-end infinite alternate,
-             type-remove-uxweb 5.5s 11.5s steps(12, end) forwards
+             type-remove-uxweb 3.7s 8.3s steps(11, end) forwards
 }
 
 h2.web { 
 	box-shadow: .09em 0 0 var(--pink);
 	animation: caret .5s step-end infinite alternate,
-             type-remove-uxweb 5.5s 17s steps(12, end) forwards
-}
-
-h2.data { 
-	box-shadow: .09em 0 0 var(--blue);
-	animation: caret .5s step-end infinite alternate,
-             type-remove-data 7s 22.5s steps(15, end) forwards
+             type-remove-uxweb 3.7s 12s steps(11, end) forwards
 }
 
 p.click {
   opacity: 0;
   font-size: 16px;
+  margin-top: 12px;
   transform-origin: bottom center;
   transform: translateY(120px);
-  animation: show 2s 22.5s ease-out forwards
+  animation: show 2s 15.6s ease-out forwards
 }
 
 @keyframes show {
@@ -237,8 +234,8 @@ p.click {
     width: 0;
     opacity: 1;
   }
-  75% { 
-    width: 20ch;
+  95% { 
+    width: 19ch;
   }
   100% {
     width: 0;
@@ -251,29 +248,14 @@ p.click {
     width: 0;
     opacity: 1;
   }
-  75% {
-    width: 12ch;
+  95% {
+    width: 11ch;
   }
   100% {
     width: 0;
     opacity: 1;
   }
 }
-
-@keyframes type-remove-data {
-  0% {
-    width: 0;
-    opacity: 1;
-  }
-  75% {
-    width: 15ch;
-  }
-  100% {
-    width: 0; 
-    opacity: 1;
-  }
-}
-
 
 @keyframes caret { 
   50% { 
