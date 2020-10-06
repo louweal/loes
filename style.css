@@ -6,6 +6,7 @@
   --lime: #CCE780;
   --pink: #C36CA6;
   --blue: #7ACCCC;
+  --grey: #606060;
 }
   
 * {
@@ -19,10 +20,10 @@ h1 {
 }
 
 h2 {
-  font-family: 'Inconsolata';
-  font-weight: 600;
-  font-size: 2.8em;
-/*  color: #606060; */
+  /*font-family: 'Inconsolata'; */
+  font-weight: 300;
+  font-size: 1.5em;
+  color: var(--grey); 
 }
 
 a {
@@ -38,11 +39,33 @@ a {
   border: 3px solid var(--blue);
   text-decoration: none;
   text-align: center;
-  color: black;
+  color: var(--grey);
 }
 
 .button:hover {
   background-color: var(--blue);
+}
+
+
+.hideOnDesktop {
+  display: none;
+}
+
+.hideOnMobile {
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  .hideOnDesktop {
+    display: block;
+  }
+  .hideOnMobile {
+    display: none;
+  }
+}
+
+.hide {
+  display: none;
 }
 
 html, body {
@@ -52,6 +75,8 @@ html, body {
   width: 100%;
   height: 100%;
 }
+
+/* menu / header */
 
 header {
   display: flex;
@@ -65,13 +90,13 @@ header {
 }
 
 .logo svg path {
-  opacity: 0;
+  opacity: 0.2;
 }
 
-.logo svg path.l { animation: addColor linear .3s forwards }
-.logo svg path.o { animation: addColor linear .3s .3s forwards }
-.logo svg path.e { animation: addColor linear .3s .6s forwards }
-.logo svg path.s { animation: addColor linear .3s .9s forwards }
+svg path.l { animation: addColor linear .3s forwards }
+svg path.o { animation: addColor linear .3s .3s forwards }
+svg path.e { animation: addColor linear .3s .6s forwards }
+svg path.s { animation: addColor linear .3s .9s forwards }
 
 @keyframes addColor {
   to {
@@ -118,97 +143,77 @@ nav ul li {
   min-height: 55px;
   line-height: 55px;
 }
-
-.menu-icon i {
-  font-size: 1.75em; 
-}
-
-.hide {
-  display: none;
-}
-
-.hero {
-  display: flex;
-  width: 900px;
-  justify-content: center;
-  margin: 15vh auto;
-  border: 0px solid yellow;
-}
-
-.hero-logo {
-  border: 0px solid cyan;
-  width: 400px;
-  transform: translateX(205px);
-  animation: move-left ease-in 1s 2s forwards; 
-}
-
 @keyframes appear {
   to {
     opacity: 1;
   }
 }
 
+
+.menu-icon i {
+  font-size: 1.75em; 
+}
+
+/* homepage */ 
+
+.hero {
+  position: relative;
+  width: 686px;
+  height: 490px;
+  justify-content: center;
+  margin: 15vh auto;
+  border: 0px solid black;
+}
+
+.hero-logo {
+  position: absolute;
+  border: 0px solid cyan;
+  width: 490px;
+  transform: translate(98px);
+}
+
+.hero-logo svg {
+  border: 0px solid salmon;
+  animation: move-left ease-in 1s 1.2s forwards; 
+}
+
+
 @keyframes move-left {
   to {
-    transform-origin: left;
-    transform: scale(70%) translateX(53px);
+    transform-origin: left center;
+    transform: translateX(-98px) scale(.7);
   }
 }
 
-.big-logo-l { opacity: 0.2; animation: brighten ease-in .5s forwards; }
-.big-logo-o { opacity: 0.2; animation: brighten ease-in .5s .5s forwards; }
-.big-logo-e { opacity: 0.2; animation: brighten ease-in .5s 1s forwards; }
-.big-logo-s { opacity: 0.2; animation: brighten ease-in .5s 1.5s forwards; }
-
-@keyframes brighten {
-  to {
-    opacity: 1;
-  }
+.hero-logo svg path {
+  opacity: 0.2;
 }
 
 .hero-content {
-  position: relative;
-  width: 450px;
-  float: right;
+  position: absolute;
+  width: 343px;
+  right: 0;
   opacity: 0;
-  animation: brighten ease-in 1s 2.5s forwards;
-  padding: 60px 20px 0 20px; 
+  animation: addColor ease-in 1s 2.5s forwards;
+  padding: 50px 20px 0 20px; 
   border: 0px solid pink;
 }
 
 /* homepage: H2 animation */
 
-h2.front, h2.ux, h2.web, h2.data { 
-  position: relative;
-  margin: .2em 0em;
-  overflow: hidden;
-	white-space: nowrap;
-  background: white;
+h2.front, h2.ux, h2.web {
+  display: inline-block; 
+  margin: .3em 0em;
+  padding: .2em 0em;
+  opacity: 0;
+  transform-origin: bottom center;
+  transform: translateY(140px);
+  border-bottom: 3px solid;
 }
 
-h2.front {
-  width: 0;
-  box-shadow: .1em 0 0 var(--teal);
-  animation: caret .5s step-end infinite alternate,
-  hide-caret 0s 7s forwards,
-  type-front 5s 2s steps(19, end) forwards
-}
-
-h2.ux {
-  width: 0; 
-	box-shadow: .1em 0 0 var(--lime);
-  animation: caret .5s step-end infinite alternate,
-             hide-caret 0s 10.7s forwards,
-             type-ux 3.7s 7s steps(11, end) forwards
-}
-
-h2.web { 
-  width: 0;
-	box-shadow: .1em 0 0 var(--pink);
-  animation: caret .5s step-end infinite alternate,
-            hide-caret 0s 14.7s forwards,
-            type-web 4s 10.7s steps(12, end) forwards
-}
+h2.front {border-color: var(--teal); animation: slideUp 2s 2.5s ease-out forwards}
+h2.ux { border-color: var(--lime); animation: slideUp 2s 3.5s ease-out forwards}
+h2.web { border-color: var(--pink); animation: slideUp 2s 4.5s ease-out forwards}
 
 p.click {
   opacity: 0;
@@ -216,33 +221,193 @@ p.click {
   margin-top: 12px;
   transform-origin: bottom center;
   transform: translateY(120px);
-  animation: show 2s 14.7s ease-out forwards
+  animation: slideUp 2s 6s ease-out forwards
 }
 
-@keyframes show {
+@keyframes slideUp {
   to {
     transform: translateY(0px);
     opacity: 1; 
   }
 }
 
-@keyframes type-front { to { width: 19ch }}
-@keyframes type-ux { to { width: 11ch }}
-@keyframes type-web { to { width: 12ch }}
 
-@keyframes caret { 
-  50% { 
-    box-shadow: .2em 0 0 transparent;
+@media only screen and (max-width: 600px) {
+  .hero {
+    width: 343px; 
+    margin-top: 20px;
   }
+
+
 }
 
-@keyframes hide-caret {
+/* TODO: make this standard h1 and dfine hero h1 instead */
+
+.skills h1, .portfolio h1 {
+  font-size: 56px;
+  font-weight: 300;
+}
+
+/* portfolio */
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 20px auto; 
+  width: 850px;
+  border: 0px solid maroon;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+  margin-top: 20px;
+  border: 0px solid gold;
+  transform: translateY(60px);
+  animation: slideUp .5s 0s ease-out forwards;
+}
+
+.project {
+  box-sizing: border-box;
+  display: flex;
+  margin: 15px 0;
+  width: 575px;
+  height: 122px;
+  border: 3px solid var(--grey);
+}
+
+.project-front:hover { box-shadow: 6px 6px 0 var(--teal)}
+.project-ux:hover { box-shadow: 6px 6px 0 var(--lime)}
+.project-webdesign:hover { box-shadow: 6px 6px 0 var(--pink)}
+.project-common:hover { box-shadow: 6px 6px 0 var(--grey)}
+
+.project h2 {
+  margin: 15px 0 8px 0;
+  color: #000000;
+}
+
+.project-icon {
+  padding: 10px;
+  width: 116px;
+  height: 116px;
+  text-align: center;
+}
+
+.project-info ul {
+  list-style-type: square;
+}
+
+.project-info li {
+  display: inline;
+  margin-left: -2.2em;
+  margin-right: 2.7em;
+}
+
+.project-info ul > li:before { 
+  content:'\ffed'; 
+  margin-right: 0.5em;
+}
+
+.project-info ul li span {
+  color: #aaaaaa;
+}
+
+.project-info ul li.front-end { color: var(--teal) }
+.project-info ul li.ux { color: var(--lime) }
+.project-info ul li.webdesign { color: var(--pink) }
+.project-info ul li.common { color: var(--grey) }
+
+
+.project-icon i {
+  line-height: 96px;
+  font-size: 60px;
+}
+
+.project-info p {
+  color: #aaaaaa;
+}
+
+.technique:hover {
+  border-bottom: 2px solid var(--grey);
+}
+/*
+
+.project:hover .common { border-color: var(--grey)}
+.project:hover .front-end { border-color: var(--teal)}
+.project:hover .ux { border-color: var(--lime)}
+.project:hover .webdesign { border-color: var(--pink)}
+
+*/
+
+/* skills */ 
+.skills  {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px auto;
+  width: 424px;
+  border: 0px solid indigo;
+}
+
+.skillset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  border: 0px solid gold;
+}
+
+.skill {
+  width: 120px;
+  height: 120px;
+  margin: 10px;
+  border: 0px solid burlywood;
+}
+
+.skill-icon {
+  opacity: 0.9;
+  transform: scale(0.92);
+  animation: grow .2s 10ms ease-in forwards; 
+}
+
+.skill-icon i {
+  color: var(--grey);
+  font-size: 100px;
+  line-height: 120px;
+}
+
+.skill-data {
+  height: 120px;
+  color: white;
+  padding: 26px 14px 0 14px;
+  opacity: 0.9;
+  transform: scale(0.92);
+  animation: grow .3s 10ms ease-in forwards;
+}
+
+@keyframes grow {
   to {
-    box-shadow: none;
+    opacity: 1;
+    transform: scale(1);
   }
 }
-/* contact */
 
+.skill-data h2 {
+  color: white;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.skill .common { background-color: var(--grey);}
+.skill .front-end { background-color: var(--teal);}
+.skill .ux { background-color: var(--lime);}
+.skill .webdesign { background-color: var(--pink);}
+
+/* contact */
 
 .email {
   display: flex;
