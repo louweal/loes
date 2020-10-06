@@ -68,18 +68,10 @@ header {
   opacity: 0;
 }
 
-.logo svg path.l {
-  animation: addColor linear 0.5s .5s forwards;
-}
-.logo svg path.o {
-  animation: addColor linear .5s 1s forwards;
-}
-.logo svg path.e {
-  animation: addColor linear .5s 1.5s forwards;
-}
-.logo svg path.s {
-  animation: addColor linear .5s 2s forwards;
-}
+.logo svg path.l { animation: addColor linear .3s forwards }
+.logo svg path.o { animation: addColor linear .3s .3s forwards }
+.logo svg path.e { animation: addColor linear .3s .6s forwards }
+.logo svg path.s { animation: addColor linear .3s .9s forwards }
 
 @keyframes addColor {
   to {
@@ -197,25 +189,25 @@ h2.front, h2.ux, h2.web, h2.data {
 h2.front {
   width: 0;
   box-shadow: .1em 0 0 var(--teal);
-  animation: caret .3s step-end infinite alternate,
-  hide-caret 0s 8.3s forwards,
-  type-front 6.3s 2s steps(19, end) forwards
+  animation: caret .5s step-end infinite alternate,
+  hide-caret 0s 7s forwards,
+  type-front 5s 2s steps(19, end) forwards
 }
 
 h2.ux {
   width: 0; 
 	box-shadow: .1em 0 0 var(--lime);
-  animation: caret .3s step-end infinite alternate,
-             hide-caret 0s 12s forwards,
-             type-ux 3.7s 8.3s steps(11, end) forwards
+  animation: caret .5s step-end infinite alternate,
+             hide-caret 0s 10.7s forwards,
+             type-ux 3.7s 7s steps(11, end) forwards
 }
 
 h2.web { 
   width: 0;
 	box-shadow: .1em 0 0 var(--pink);
-  animation: caret .3s step-end infinite alternate,
-            hide-caret 0s 16s forwards,
-            type-web 4s 12s steps(12, end) forwards
+  animation: caret .5s step-end infinite alternate,
+            hide-caret 0s 14.7s forwards,
+            type-web 4s 10.7s steps(12, end) forwards
 }
 
 p.click {
@@ -224,7 +216,7 @@ p.click {
   margin-top: 12px;
   transform-origin: bottom center;
   transform: translateY(120px);
-  animation: show 2s 15.6s ease-out forwards
+  animation: show 2s 14.7s ease-out forwards
 }
 
 @keyframes show {
