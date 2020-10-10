@@ -20,26 +20,21 @@
 <body>
 
     <header>
-        <div class="logo">
+        <div class="logo hideOnMobile">
             <a href="index.html">
-                <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="l" d="M27.4611 27.4612L54.9223 27.4612L48.771 21.3099L33.6125 21.3099L33.6125 5.71192L27.4611 0L27.4611 27.4612Z" fill="#27AE96"/>
-                    <path class="o" fill-rule="evenodd" clip-rule="evenodd" d="M27.4612 27.4612L27.4612 55L41.2694 41.2694L55 27.4612L27.4612 27.4612ZM33.6529 33.8906H39.949L37.0022 36.8374L33.6529 40.1867V33.8906Z" fill="#CCE780"/>
-                    <path class="e" fill-rule="evenodd" clip-rule="evenodd" d="M0 27.4612H27.4612V54.9223L21.4197 48.6612V37.6767L15.9275 43.2788L11.6435 38.885L16.9161 33.6125H6.26115L0 27.4612Z" fill="#C46CA6"/>
-                    <path class="s" fill-rule="evenodd" clip-rule="evenodd" d="M27.4612 0L27.4612 8.78758L21.0902 15.1586L27.4612 21.5296V27.4612L0 27.4612L5.93161 21.2L18.4539 21.3099L12.0829 15.1586L27.4612 0Z" fill="#7ACCCC"/>
-                </svg>
+                <img src="assets/img/logo_grey.png" title="loes logo">
             </a>
         </div>
         <nav onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
-            <div class="menu-items hide" id="menu">
+            <div class="menu-items hideOnDesktop" id="menu">
                 <ul>
-                    <li><a class="menu-item" href="#">About</a></li>
+                    <li class="hideOnMobile"><a class="menu-item" href="#">About</a></li>
                     <li><a class="menu-item" href="portfolio.html">Portfolio</a></li>
                     <li><a class="menu-item" href="skills.html">Skills</a></li>
                     <li><a class="menu-item" href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="menu-icon" id="menu-icon">
+            <div class="menu-icon hideOnMobile" id="menu-icon">
                 <i class="fa fa-bars"></i>
             </div>
         </nav>
@@ -53,7 +48,7 @@
 
         <div class="photo"> 
         </div>
-
+        <hr>
         <div class="about-content">
             <p>Duis rhoncus augue at dictum congue. In eget aliquam libero, in sagittis elit. 
                 Pellentesque consequat nisl id erat ultricies fermentum. Vestibulum imperdiet 
@@ -72,6 +67,7 @@
                 nec sem maximus, blandit odio non, commodo sapien.</p>
             </p>    
         </div> 
+        
     </div>
 
 
