@@ -5,29 +5,23 @@
     <title>LOES</title>
     <meta charset="UTF-8">
     <meta name="description" content="">
-    <meta name="keywords" content="">
     <meta name="author" content="Loes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="assets/img/favicon_16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/img/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/img/favicon_96x96.png" sizes="96x96">
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-    <!--<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="jquery-visible/jquery.visible.min.js"></script> -->
     <script src="script.js"></script>
 </head>
 
 <body>
 
     <header>
-        <div class="logo hide">
-            <a href="index.html"><svg width="54" height="54" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="l" d="M27.4611 27.4612L54.9223 27.4612L48.771 21.3099L33.6125 21.3099L33.6125 5.71192L27.4611 0L27.4611 27.4612Z" fill="#27AE96"/>
-                <path class="o" fill-rule="evenodd" clip-rule="evenodd" d="M27.4612 27.4612L27.4612 55L41.2694 41.2694L55 27.4612L27.4612 27.4612ZM33.6529 33.8906H39.949L37.0022 36.8374L33.6529 40.1867V33.8906Z" fill="#CCE780"/>
-                <path class="e" fill-rule="evenodd" clip-rule="evenodd" d="M0 27.4612H27.4612V54.9223L21.4197 48.6612V37.6767L15.9275 43.2788L11.6435 38.885L16.9161 33.6125H6.26115L0 27.4612Z" fill="#C46CA6"/>
-                <path class="s" fill-rule="evenodd" clip-rule="evenodd" d="M27.4612 0L27.4612 8.78758L21.0902 15.1586L27.4612 21.5296V27.4612L0 27.4612L5.93161 21.2L18.4539 21.3099L12.0829 15.1586L27.4612 0Z" fill="#7ACCCC"/>
-                </svg></a>
-        </div>
+
         <nav onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
             <div class="menu-items hideOnDesktop" id="menu">
                 <ul>
@@ -43,36 +37,38 @@
         </nav>
 
     </header>
-    <div class="splash hideOnDesktop">
-        <div class="splash-logo">
-            <svg class="big-logo" width="490" height="490" viewBox="0 0 491 490" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="big-logo l" d="M244.953 244.654L489.607 244.654L434.805 189.852L299.756 189.852L299.756 50.888L244.953 0L244.953 244.654Z" fill="#27AE96"/>
-                <path class="big-logo o" fill-rule="evenodd" clip-rule="evenodd" d="M244.954 244.654L244.954 490L367.973 367.673L490.3 244.654L244.954 244.654ZM300.117 301.934H356.21L329.956 328.188L300.117 358.027V301.934Z" fill="#33534D"/>
-                <path class="big-logo e" fill-rule="evenodd" clip-rule="evenodd" d="M0.300293 244.654H244.954V489.308L191.13 433.527V335.665L142.2 385.575L104.034 346.43L151.007 299.457H56.0814L0.300293 244.654Z" fill="#27AE96"/>
-                <path class="big-logo s" fill-rule="evenodd" clip-rule="evenodd" d="M244.954 0L244.954 78.2893L188.195 135.049L244.954 191.809V244.654L0.300293 244.654L53.1456 188.873L164.708 189.852L107.948 135.049L244.954 0Z" fill="#7ACCCC"/>
-            </svg>           
+
+    <div class="homepage">
+        <div class="splash hideOnDesktop">
+            <div class="splash-logo">
+                <svg class="big-logo" width="490" height="490" viewBox="0 0 491 490" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="big-logo l" d="M244.953 244.654L489.607 244.654L434.805 189.852L299.756 189.852L299.756 50.888L244.953 0L244.953 244.654Z" fill="#27AE96"/>
+                    <path class="big-logo o" fill-rule="evenodd" clip-rule="evenodd" d="M244.954 244.654L244.954 490L367.973 367.673L490.3 244.654L244.954 244.654ZM300.117 301.934H356.21L329.956 328.188L300.117 358.027V301.934Z" fill="#33534D"/>
+                    <path class="big-logo e" fill-rule="evenodd" clip-rule="evenodd" d="M0.300293 244.654H244.954V489.308L191.13 433.527V335.665L142.2 385.575L104.034 346.43L151.007 299.457H56.0814L0.300293 244.654Z" fill="#27AE96"/>
+                    <path class="big-logo s" fill-rule="evenodd" clip-rule="evenodd" d="M244.954 0L244.954 78.2893L188.195 135.049L244.954 191.809V244.654L0.300293 244.654L53.1456 188.873L164.708 189.852L107.948 135.049L244.954 0Z" fill="#7ACCCC"/>
+                </svg>           
+            </div>
+        </div>
+        <div class="hero">
+    
+            <div class="hero-logo hideOnMobile">
+                <svg class="big-logo" width="490" height="490" viewBox="0 0 491 490" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="big-logo l" d="M244.953 244.654L489.607 244.654L434.805 189.852L299.756 189.852L299.756 50.888L244.953 0L244.953 244.654Z" fill="#27AE96"/>
+                    <path class="big-logo o" fill-rule="evenodd" clip-rule="evenodd" d="M244.954 244.654L244.954 490L367.973 367.673L490.3 244.654L244.954 244.654ZM300.117 301.934H356.21L329.956 328.188L300.117 358.027V301.934Z" fill="#33534D"/>
+                    <path class="big-logo e" fill-rule="evenodd" clip-rule="evenodd" d="M0.300293 244.654H244.954V489.308L191.13 433.527V335.665L142.2 385.575L104.034 346.43L151.007 299.457H56.0814L0.300293 244.654Z" fill="#27AE96"/>
+                    <path class="big-logo s" fill-rule="evenodd" clip-rule="evenodd" d="M244.954 0L244.954 78.2893L188.195 135.049L244.954 191.809V244.654L0.300293 244.654L53.1456 188.873L164.708 189.852L107.948 135.049L244.954 0Z" fill="#33534D"/>
+                </svg>
+            </div>
+            <div class="hero-content">
+                <h1>LOES</h1>
+                <h2 class="front">Front-end development</h2>
+                <h2 class="ux">UI/UX design</h2>
+                <h2 class="web">Web design & SEO</h2>
+                <a class="button" href="portfolio.html">View portfolio</a>
+            </div>
         </div>
     </div>
 
-    <div class="hero">
-        <div class="hero-logo hideOnMobile">
-            <svg class="big-logo" width="490" height="490" viewBox="0 0 491 490" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="big-logo l" d="M244.953 244.654L489.607 244.654L434.805 189.852L299.756 189.852L299.756 50.888L244.953 0L244.953 244.654Z" fill="#27AE96"/>
-                <path class="big-logo o" fill-rule="evenodd" clip-rule="evenodd" d="M244.954 244.654L244.954 490L367.973 367.673L490.3 244.654L244.954 244.654ZM300.117 301.934H356.21L329.956 328.188L300.117 358.027V301.934Z" fill="#33534D"/>
-                <path class="big-logo e" fill-rule="evenodd" clip-rule="evenodd" d="M0.300293 244.654H244.954V489.308L191.13 433.527V335.665L142.2 385.575L104.034 346.43L151.007 299.457H56.0814L0.300293 244.654Z" fill="#27AE96"/>
-                <path class="big-logo s" fill-rule="evenodd" clip-rule="evenodd" d="M244.954 0L244.954 78.2893L188.195 135.049L244.954 191.809V244.654L0.300293 244.654L53.1456 188.873L164.708 189.852L107.948 135.049L244.954 0Z" fill="#33534D"/>
-            </svg>
-        </div>
-        <div class="hero-content">
-            <h1>LOES</h1>
-            <h2 class="front">Front-end development</h2>
-            <h2 class="ux">UI/UX design</h2>
-            <h2 class="web">Web design & SEO</h2>
-            <p class="click">
-                <a class="button" href="portfolio.html">View portfolio</a>
-            </p>
-        </div>
-    </div>
 </body>
 
 </html>

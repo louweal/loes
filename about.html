@@ -5,9 +5,12 @@
     <title>LOES</title>
     <meta charset="UTF-8">
     <meta name="description" content="">
-    <meta name="keywords" content="">
     <meta name="author" content="Loes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="assets/img/favicon_16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/img/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/img/favicon_96x96.png" sizes="96x96">
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
@@ -20,12 +23,11 @@
 <body>
 
     <header>
-        <div class="logo hideOnMobile">
-            <a href="index.html">
-                <img src="assets/img/logo_grey.png" title="loes logo">
-            </a>
-        </div>
-        <nav onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
+        <a href="index.html">
+            <div class="logo">
+            </div>
+        </a>
+    <nav onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
             <div class="menu-items hideOnDesktop" id="menu">
                 <ul>
                     <li class="hideOnMobile"><a class="menu-item" href="#">About</a></li>
@@ -41,7 +43,7 @@
 
     </header>
 
-    <div class="about">
+    <article class="about">
         <div class="page-title">
             <h1>Hi, I'm Loes</h1>
         </div>
@@ -50,25 +52,39 @@
         </div>
         <hr>
         <div class="about-content">
-            <p>Duis rhoncus augue at dictum congue. In eget aliquam libero, in sagittis elit. 
-                Pellentesque consequat nisl id erat ultricies fermentum. Vestibulum imperdiet 
-                molestie condimentum. Vestibulum hendrerit efficitur leo, ut dictum enim 
-                pulvinar nec. Nullam vulputate gravida justo eu iaculis. Etiam viverra mauris 
-                justo. Sed sed quam pulvinar, hendrerit magna non, gravida magna. Sed sed 
-                turpis mauris. Vivamus lobortis finibus lacus, nec auctor ligula luctus quis. 
-                Morbi luctus nibh id lacus dignissim vehicula. Integer nunc tellus, ultrices 
-                congue euismod in, tempus eget mauris.</p><br>
+            <div class="about-text">
+                <p>In 2006, even before we had computer with internet at our home, I discovered how to style webpages 
+                    using CSS and not long after that I was building websites with Adobe Photoshop, HTML, CSS, PHP and MySQL 
+                    for everyone who needed one. I loved every aspect of it, from designing logos to scripting in PHP. </p>
 
-                <p>Aliquam tincidunt, metus sit amet posuere facilisis, massa odio placerat 
-                dui, in fermentum nulla ipsum eget felis. Curabitur iaculis magna eu ligula 
-                porta, ut ullamcorper odio varius. In consequat dui eu risus dictum consectetur. 
-                Nunc commodo mauris sed ex rutrum maximus. Morbi ultricies, sem eget fringilla 
-                tempus, tellus enim dignissim mauris, ut semper turpis nisl ut libero. Donec 
-                nec sem maximus, blandit odio non, commodo sapien.</p>
-            </p>    
+                <p>During my studies (Computer Science) I spend uncountably many hours programming in Python and I learned many other cool things like machine learning, (genomic) data 
+                    science, linguistics and statistics.</p>
+                    <p>
+                After my graduation I was working as a (Python) research support programmer, but as a result of the corona 
+                    lockdown my projects gradually switched from Python to JavaScript in order to support 
+                    web-based research and soon I rediscovered my true passion. For me, <b>digital development and design is like magic</b>: starting 
+                    with absolutely nothing you can create the most beautiful and awesome things.</p>
+                
+                <p>Currently I design and develop for the web on a daily basis, 
+                    which includes UX and graphic design, developing the front-ends for 
+                    websites, dashboards and API's, building small WordPress websites and search engine optimization.
+
+                    <!--<ul>
+                        <li><a>I design websites (including WordPress sites and SEO)</a></li>
+                        <li><a>I design logos, illustrations and responsive web layouts</a></li>
+                        <li><a>I develop front-ends for websites, dashboards and API's</a></li>
+                    </ul>-->
+                </p>
+
+                <h2>About me</h2>
+                <p>I live in small apartment in the most beautiful part of Leiden. My boyfriend is also my neighbour and I live 
+                    together with my two rabbits Nijn & Rakker, who like to keep me awake at night. 
+                    I have too many house plants, I love trees and forests and I'm afraid of goats. 
+                    I often listen to podcasts, I never play computer games, but I like to play board games.</p>
+            </div>    
         </div> 
         
-    </div>
+    </article>
 
 
 </body>

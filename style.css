@@ -1,62 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 
+/* general styles */
+
 :root { /* color scheme */
+  --light-teal: #DBEAE7;
   --teal: #27AE96;
-  --lime: #CCE780;
-  --pink: #C36CA6;
-  --blue: #7ACCCC;
-  --main-color: #33534D /* #606060; */
+  --dark-teal: #33534D;
 }
   
 * {
   box-sizing: border-box; 
   margin: 0;
-  font-size: 16px;
+}
+
+html, body {
+  padding: 0; 
+  background-color: var(--light-teal);
+  font: 16px 'Roboto Slab';
+  width: 100%;
+  height: 100%;
+  color: #33534D;
 }
 
 h1 {
-  font-size: 56px;
-  font-weight: 300;
+  font-size: 3.5em;
+  font-weight: 600;
 }
 
 h2 {
-  /*font-family: 'Inconsolata'; */
   font-weight: 300;
   font-size: 1.5em;
-  color: var(--main-color); 
+  color: var(--dark-teal); 
+  margin-bottom: .8em;
+}
+
+p {
+  margin-bottom: 1em;
 }
 
 a {
   text-decoration: none;
-  color: var(--main-color);
+  color: var(--dark-teal);
 }
 
-a:hover {
+ul {
+  list-style-type: square;
+}
+
+li {
   color: var(--teal);
 }
 
+ul li a {
+  color: var(--dark-teal);
+}
+
 hr {
+  border: none;
   border-top: 4px solid var(--teal);
   margin: 15px 0;
   width: 100%;
 }
+
+article { /* contains page content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 20px auto; 
+}
+
+/* utilities */
 
 .button {
   display: inline-block;
   margin-top: 2em;
 	padding: 0.5em 1.5em;
   background-color: none;
-  border: 3px solid var(--main-color);
+  border: 3px solid var(--dark-teal);
   text-decoration: none;
   text-align: center;
-  color: var(--main-color);
+  color: var(--dark-teal);
 }
 
 .button:hover {
-  background-color: var(--main-color);
-  color: white;
+  background-color: var(--dark-teal);
+  color: var(--light-teal);
 }
+
 
 
 .hideOnDesktop {
@@ -80,16 +112,11 @@ hr {
   display: none;
 }
 
-html, body {
-  padding: 0em; 
-  background-color: #DBEAE7; /*  #f1f1f1; */
-  font: 16px 'Roboto Slab';
-  width: 100%;
-  height: 100%;
-  color: #33534D;
-}
+@keyframes toFullOpacity { to { opacity: 1;}}
+@keyframes scaleVertical { to { transform: scaleY(1)}}
+@keyframes grow { to { opacity: 1; transform: scale(1)}}
 
-/* menu / header */
+/* site-wide styles */
 
 header {
   display: flex;
@@ -99,28 +126,10 @@ header {
 }
 
 .logo { 
+  background-image: url(assets/img/logo_menu.png);
+  width: 55px;
+  height: 55px;
   margin: 1em 2em;
-  filter: grayscale();
-}
-
-.logo:hover {
-  filter: none;
-}
-
-.logo svg path {
-  opacity: 1;
-  fill: var(--main-color)
-}
-
-svg path.l { animation: addColor linear .3s forwards }
-svg path.o { animation: addColor linear .3s .3s forwards }
-svg path.e { animation: addColor linear .3s .6s forwards }
-svg path.s { animation: addColor linear .3s .9s forwards }
-
-@keyframes addColor {
-  to {
-    opacity: 1;
-  }
 }
 
 nav {
@@ -128,6 +137,7 @@ nav {
   justify-content: flex-end;
   flex-grow: 7;
   float: right;
+  margin: .8em 2em .8em 0;
 }
 
 nav ul li {
@@ -136,51 +146,48 @@ nav ul li {
 }
 
 .menu-items {
-  font-size: 1.25em;
   min-height: 55px;
   line-height: 55px;
   opacity: 0;
-  animation: appear 1s ease-in forwards;
-  margin: .8em 2em .8em 0;
+  animation: toFullOpacity 1s ease-in forwards;
 }
-
 
 .menu-item {
   padding: .3em .5em .3em .5em;
   border-bottom: .2em solid transparent;
-  border: 0px solid red;
 }
 
 
 .menu-item:hover {
-  border-bottom: 3px solid var(--teal);
-  color: var(--main-color)
+  border-bottom: .2em solid var(--teal);
 }
 
 .menu-icon {
-  opacity: 0;
-  animation: appear 1s ease-in forwards;
-  margin: 1em 2em;
   min-height: 55px;
   line-height: 55px;
+  opacity: 0;
+  animation: toFullOpacity 1s ease-in forwards;
 }
 
 .menu-icon i {
   font-size: 1.75em; 
 }
 
-
-@keyframes appear {
-  to {
-    opacity: 1;
-  }
-}
-
 @media only screen and (max-width: 600px) {
+  header {
+    border-bottom: 4px solid var(--dark-teal);
+  }
+
+  .logo { 
+    margin: 8px 8px 7px 7px;
+    background-image: url(assets/img/logo_mobile.png);
+    width: 40px;
+    height: 40px;
+  }
+
   nav {
     justify-content: center;
     width: 90%;
-    border-bottom: 4px solid var(--main-color);
   }
 
   nav ul {
@@ -205,25 +212,23 @@ nav ul li {
   height: 490px;
   justify-content: center;
   margin: 15vh auto;
-  border: 0px solid black;
-}
-
-.hero h1 {
-  font-size: 4.4em;
 }
 
 .hero-logo {
   position: absolute;
-  border: 0px solid cyan;
   width: 490px;
   transform: translate(98px);
 }
 
+.homepage svg path { opacity: 0.2 }
+.homepage svg path.l { animation: toFullOpacity linear .3s forwards }
+.homepage svg path.o { animation: toFullOpacity linear .3s .3s forwards }
+.homepage svg path.e { animation: toFullOpacity linear .3s .6s forwards }
+.homepage svg path.s { animation: toFullOpacity linear .3s .9s forwards }
+
 .hero-logo svg {
-  border: 0px solid salmon;
   animation: move-left ease-in-out 2s 1.1s forwards; 
 }
-
 
 @keyframes move-left {
   50% {
@@ -235,10 +240,6 @@ nav ul li {
   }
 }
 
-.hero-logo svg path {
-  opacity: 0.2;
-}
-
 .hero-logo svg path:hover {
   transform-origin: 50% 50%;
   transform: scale(1.1)
@@ -248,16 +249,18 @@ nav ul li {
   position: absolute;
   width: 343px;
   right: 0;
+  padding: 75px 20px 0 20px; 
   opacity: 0;
-  animation: addColor ease-in 1s 2.5s forwards;
-  padding: 50px 20px 0 20px; 
-  border: 0px solid pink;
+  animation: toFullOpacity ease-in 1s 2.5s forwards;
 }
 
-/* homepage: H2 animation */
+.hero h1 { /* Loes */
+  font-size: 4.4em;
+}
 
-h2.front, h2.ux, h2.web {
-  display: inline-block; 
+.hero h2 { /* roles */
+  display: inline-block;
+  font-weight: 100; 
   margin: .3em 0em;
   padding: .2em 0em;
   opacity: 0;
@@ -266,16 +269,9 @@ h2.front, h2.ux, h2.web {
   border-bottom: 3px solid var(--teal);
 }
 
-h2.front { animation: slideUp 1s 2.5s ease-out forwards}
-h2.ux { animation: slideUp 1s 3.5s ease-out forwards}
-h2.web { animation: slideUp 1s 4.5s ease-out forwards}
-
-p.click a {
-  font-size: 16px;
-  transform-origin: center center;
-  transform: scale(0);
-  animation: grow 1s 5.3s ease-out forwards
-}
+.hero h2.front { animation: slideUp 1s 2.5s ease-out forwards}
+.hero h2.ux { animation: slideUp 1s 3.5s ease-out forwards}
+.hero h2.web { animation: slideUp 1s 4.5s ease-out forwards}
 
 @keyframes slideUp {
   75% {
@@ -287,6 +283,11 @@ p.click a {
   }
 }
 
+.hero .button { /* View portfolio button */ 
+  transform-origin: center center;
+  transform: scale(0);
+  animation: grow 1s 5.3s ease-out forwards
+}
 
 @media only screen and (max-width: 600px) {
   .hero {
@@ -294,6 +295,8 @@ p.click a {
     margin-top: 20px;
   }
 }
+
+/* mobile splash screen */ 
 
 .splash {
   display: none;
@@ -306,20 +309,15 @@ p.click a {
     height: 100vh;
     position: fixed;
     z-index: 1;
-    background: var(--lgrey);  
     animation: hide-splash .7s 1.2s linear forwards;
   }
   
   .splash .splash-logo {
-    margin: 0 auto;
     position: absolute;
     top: 40%;
     left: 50%;
+    margin: 0 auto;
     transform: translate(-50%, -50%) scale(0.70);
-  }
-
-  .splash-logo svg path {
-    opacity: 0.2;
   }
 }
 
@@ -337,17 +335,8 @@ p.click a {
 /* about */
 
 .about {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  margin: 20px auto;
-  width: 500px;
-  border: 0px solid indigo;  
-}
-
-.about p {
-  text-align: left;
+  width: 550px;
 }
 
 .photo {
@@ -359,37 +348,28 @@ p.click a {
   margin-top: 22px;
   z-index: 1;
   opacity: 1;
-  animation: appear .5s .1s ease-in forwards;
+  animation: toFullOpacity .5s .1s ease-in forwards;
 }
 
-
-.photo:hover {
-  filter: none;
-}
+.photo:hover { filter: none; }
 
 .about hr {
   margin-top: -25px;
 }
 
 .about-content {
+  text-align: left;
   padding: 65px 20px 40px 20px;
-  margin-top: -25px;
-  border-bottom: 3px solid var(--teal);  
+  margin: -25px 0 70px 0;
+  border-bottom: 4px solid var(--teal);  
   transform: scaleY(0);
   transform-origin: top center;
-  animation: scaleDownwards 1.3s .2s ease-out forwards;
+  animation: scaleVertical 1.3s .2s ease-out forwards;
 }
 
-
-@keyframes scaleDownwards {
-  to {
-    transform: scaleY(1);
-  }
-}
-
-.about-content p {
+.about-text {
   opacity: 0;
-  animation: appear 1s 1.2s ease-out forwards; 
+  animation: toFullOpacity 1s 1.2s ease-out forwards; 
 }
 
 @media only screen and (max-width: 600px) {
@@ -399,43 +379,32 @@ p.click a {
   }
 }
 
-
 /* portfolio */
 
 .portfolio {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin: 20px auto; 
   width: 550px;
-  border: 0px solid maroon;
 }
 
 .projects {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
   text-align: left;
-  width: 550px;
   margin-top: 20px;
   border: 0px solid gold;
-  /*transform: translateY(60px);*/
 }
-
 
 .project {
   display: flex;
+  width: 500px; 
+  min-height: 100px;
   margin: 15px;
   padding: 10px 15px;
-  width: 500px; /*  575 */
-  min-height: 100px;
-  background-color: transparent;
   border: 4px solid var(--teal);
   transform: scaleX(.6);
   animation: growShrink .9s .1s linear forwards;
 }
+.project:hover { border-color: var(--dark-teal) }
 
 @keyframes growShrink {
   60% {
@@ -446,41 +415,24 @@ p.click a {
   }
 }
 
-.project:hover {
-  border: 4px solid var(--main-color);
-}
-
 .project-info {
   opacity: 0;
-  animation: appear .7s 1s ease-out forwards;
+  animation: toFullOpacity .7s 1s ease-out forwards;
 }
 
-.project-info ul {
-  list-style-type: square;
-  opacity: 0;
-}
+.project-info ul { opacity: 0}
 
-.project:hover ul {
-  opacity: 1;
-}
+.project:hover ul { opacity: 1}
 
 .project-info li {
   display: inline;
   margin-left: -2.2em;
   margin-right: 2.7em;
-  color: var(--teal);
 }
 
 .project-info ul > li:before { 
   content:'\ffed'; 
   margin-right: 0.5em;
-}
-
-.project-info ul li a {
-  color: var(--main-color);
-}
-.project-info p {
-  color: white;
 }
 
 @media only screen and (max-width: 600px) {
@@ -495,12 +447,7 @@ p.click a {
 
 /* skills */ 
 .skills  {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 20px auto;
   width: 424px;
-  border: 0px solid indigo;
 }
 
 .skillset {
@@ -508,24 +455,21 @@ p.click a {
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px 0;
-  border: 0px solid gold;
   border-bottom: 4px solid var(--teal);  
-  transform: scaleY(0);
   transform-origin: top center;
-  animation: scaleDownwards 1.3s .2s ease-out forwards;
+  transform: scaleY(0);
+  animation: scaleVertical 1.3s .2s ease-out forwards;
 }
-
 
 .skill {
   width: 30%;
   margin: 1%;
-  border: 0px solid burlywood;
   opacity: 0;
-  animation: appear 1s 1.5s ease-out forwards; 
+  animation: toFullOpacity 1s 1.5s ease-out forwards; 
 }
 
 .skill-data {
-  background-color: var(--main-color);
+  background-color: var(--dark-teal);
 }
 
 .skill-icon {
@@ -535,40 +479,26 @@ p.click a {
 }
 
 .skill-icon i {
-  color: var(--main-color);
+  color: var(--dark-teal);
   font-size: 100px;
   line-height: 120px;
 }
 
 .skill-data {
   height: 120px;
-  color: white;
+  color: var(--light-teal);
   padding: 26px 14px 0 14px;
   opacity: 0.9;
   transform: scale(0.92);
   animation: grow .3s .1s ease-in forwards;
 }
 
-@keyframes grow {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
 .skill-data h2 {
-  color: white;
+  color: var(--light-teal);
   font-size: 1.1em;
-  margin-bottom: 10px;
+  margin-bottom: .9em;
 }
-
-/*
-.skill .common { background-color: var(--main-color);}
-.skill .front-end { background-color: var(--teal);}
-.skill .ux { background-color: var(--lime);}
-.skill .webdesign { background-color: var(--pink);}
-*/
-
 
 @media only screen and (max-width: 600px) {
   .skills {
@@ -587,13 +517,8 @@ p.click a {
 /* contact */
 
 .contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
   margin: 25vh auto 0 auto;
   width: 500px;
-  border: 0px solid indigo;   
 }
 
 .email {
@@ -613,43 +538,28 @@ p.click a {
   box-shadow: .1em 0 0 var(--teal);  
   animation: type 3s 0s steps(14, end) forwards,
   caret .5s step-end infinite alternate,
-  hide 0s 3s forwards;
+  hideCaret 0s 3s forwards;
 }
 
-@keyframes type {
-  to { 
-    width: 14ch;
-  }
-}
-
-@keyframes caret { 
-  50% { 
-    box-shadow: .08em 0 0 transparent;
-  }
-}
-
-@keyframes hide {
-  to {
-    box-shadow: none;
-  }
-}
+@keyframes type {to { width: 14ch}}
+@keyframes caret { 50% { box-shadow: .08em 0 0 transparent }}
+@keyframes hideCaret {to {box-shadow: none}}
 
 .contact hr {
   margin: 1.3em 0 .3em 0;
-  background: pink;
   transform: scaleX(0);
-  animation: scaleMax 1s 3s ease-out forwards;
+  animation: scaleHorizontal 1s 3s ease-out forwards;
 }
 
-@keyframes scaleMax {
-  to {
-    transform: scaleX(1);
-  }
-}
+@keyframes scaleHorizontal { to { transform: scaleX(1)}}
 
 .socials i {
   margin: .3em;
   font-size: 2em;
+}
+
+.socials a:hover {
+  color: var(--teal);
 }
 
 @media only screen and (max-width: 600px) {
