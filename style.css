@@ -361,13 +361,14 @@ nav ul li {
 /* portfolio */
 
 .portfolio {
-  width: 550px;
+  width: 500px;
 }
 
 .projects {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   text-align: left;
   margin-top: 20px;
   border: 0px solid gold;
@@ -378,7 +379,7 @@ nav ul li {
   flex-direction: column;
   width: 500px; 
   min-height: 100px;
-  margin: 15px;
+  margin: 15px 0;
   padding: 15px 18px;
   border: 4px solid var(--teal);
   transform: scaleX(1);
@@ -397,7 +398,6 @@ nav ul li {
 
 .project-info {
   opacity: 0;
-  width: 100%;
   animation: toFullOpacity .7s 1s ease-out forwards;
 }
 
@@ -424,14 +424,13 @@ nav ul li {
 }
 
 .project-details .screen {
-  border: 14px solid black;
+  border: 1em solid black;
   border-radius: 30px;
   box-shadow: 3px 3px 0 white;
 }
 
 .expand {
   width: 1200px;
-  margin-left: -350px;
 }
 
 .show {
@@ -439,12 +438,20 @@ nav ul li {
 }
 
 @media only screen and (max-width: 600px) {
-  .portfolio, .projects {
-    width: 99%;
+  .portfolio, .projects, .project {
+    width: 98%;
   }
 
   .project-info ul {
     opacity: 1;
+  }
+
+  .expand {
+    width: 97vw;
+  }
+
+  img {
+    max-width: 85vw;
   }
 }
 
