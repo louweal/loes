@@ -36,12 +36,16 @@ h2 {
 }
 
 p {
-  margin-bottom: 1em;
+  margin: .6em 0;
 }
 
 a {
   text-decoration: none;
   color: var(--dark-teal);
+}
+
+img {
+  margin: .6em 0;
 }
 
 ul {
@@ -52,7 +56,7 @@ li {
   color: var(--teal);
 }
 
-ul li a {
+ul li span {
   color: var(--dark-teal);
 }
 
@@ -248,7 +252,7 @@ nav ul li {
 @media only screen and (max-width: 600px) { /* mobile devices */
   .hero {
     width: 343px;  
-    margin-top: -70px;
+    margin-top: 20px;
   }
 
   .splash {
@@ -371,12 +375,13 @@ nav ul li {
 
 .project {
   display: flex;
+  flex-direction: column;
   width: 500px; 
   min-height: 100px;
   margin: 15px;
-  padding: 10px 15px;
+  padding: 15px 18px;
   border: 4px solid var(--teal);
-  transform: scaleX(.6);
+  transform: scaleX(1);
   animation: growShrink .9s .1s linear forwards;
 }
 .project:hover { border-color: var(--dark-teal) }
@@ -392,12 +397,13 @@ nav ul li {
 
 .project-info {
   opacity: 0;
+  width: 100%;
   animation: toFullOpacity .7s 1s ease-out forwards;
 }
 
-.project-info ul { opacity: 0}
+.project-info ul {opacity: 0}
 
-.project:hover ul { opacity: 1}
+.project:hover ul {opacity: 1}
 
 .project-info li {
   display: inline;
@@ -408,6 +414,28 @@ nav ul li {
 .project-info ul > li:before { 
   content:'\ffed'; 
   margin-right: 0.5em;
+}
+
+.project-details {
+  width: 100%;
+  border: 0px solid gold;
+  opacity: .5;
+  animation: toFullOpacity 1.5s .2s linear forwards;
+}
+
+.project-details .screen {
+  border: 14px solid black;
+  border-radius: 30px;
+  box-shadow: 3px 3px 0 white;
+}
+
+.expand {
+  width: 1200px;
+  margin-left: -350px;
+}
+
+.show {
+  opacity: 1;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    document.getElementById("skill-rating-html5").innerHTML = showRating(5);
-    document.getElementById("skill-rating-css3").innerHTML = showRating(5);
+    document.getElementById("skill-rating-html5").innerHTML = showRating(4);
+    document.getElementById("skill-rating-css3").innerHTML = showRating(4);
     document.getElementById("skill-rating-js").innerHTML = showRating(3);
     document.getElementById("skill-rating-nodejs").innerHTML = showRating(2);
     document.getElementById("skill-rating-figma").innerHTML = showRating(3);
-    document.getElementById("skill-rating-wordpress").innerHTML = showRating(4);
+    document.getElementById("skill-rating-wordpress").innerHTML = showRating(3);
     document.getElementById("skill-rating-git").innerHTML = showRating(4);
     document.getElementById("skill-rating-photoshop").innerHTML = showRating(3);
     document.getElementById("skill-rating-illustrator").innerHTML = showRating(3);
     document.getElementById("skill-rating-react").innerHTML = showRating(0);
-    document.getElementById("skill-rating-d3").innerHTML = showRating(2);
+    document.getElementById("skill-rating-d3").innerHTML = showRating(0);
     document.getElementById("skill-rating-seo").innerHTML = showRating(3);
     document.getElementById("skill-rating-python").innerHTML = showRating(5);
 });
