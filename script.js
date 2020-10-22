@@ -14,6 +14,7 @@ function hideMenu(elem) {
     menuIcon.classList.remove("hide");
 }
 
+/*
 function showProjectDetails(elem) {
     // adjust width of project
     elem.classList.toggle("expand");
@@ -26,3 +27,5 @@ function showProjectDetails(elem) {
     var projectDetails = elem.querySelector('.project-details');
     projectDetails.classList.toggle("hide");
 }
+
+*/

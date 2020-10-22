@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById("skill-rating-photoshop").innerHTML = showRating(3);
     document.getElementById("skill-rating-illustrator").innerHTML = showRating(3);
     document.getElementById("skill-rating-react").innerHTML = showRating(0);
-    document.getElementById("skill-rating-d3").innerHTML = showRating(0);
+    document.getElementById("skill-rating-d3").innerHTML = showRating(3);
     document.getElementById("skill-rating-seo").innerHTML = showRating(3);
     document.getElementById("skill-rating-python").innerHTML = showRating(5);
-    document.getElementById("skill-rating-php").innerHTML = showRating(4);
-    document.getElementById("skill-rating-mysql").innerHTML = showRating(4);
+    document.getElementById("skill-rating-php").innerHTML = showRating(3);
+    document.getElementById("skill-rating-mysql").innerHTML = showRating(3);
 
 });
 

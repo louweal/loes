@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>LOES</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Webdevelopment, UX design, SEO and more">
+    <meta name="author" content="Loes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="assets/img/favicon_16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/img/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/img/favicon_96x96.png" sizes="96x96">
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" aria-label="back to homepage">
+            <div class="logo"></div>
+        </a>
+    
+        <nav onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
+            <div class="menu-items hideOnDesktop" id="menu">
+                <ul>
+                    <li><a class="menu-item" href="about.html">About</a></li>
+                    <li class="hideOnMobile"><a class="menu-item" href="portfolio.html">Portfolio</a></li>
+                    <li><a class="menu-item" href="skills.html">Skills</a></li>
+                    <li><a class="menu-item" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="menu-icon hideOnMobile" id="menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+        </nav>
+
+    </header>
+
+    <article class="details">
+        <div class="page-title">
+            <h1>XBike Tracker</h1>
+        </div>
+
+        <div class="details-content">
+            <!--<h2>XBike Tracker</h2>-->
+
+            <div class="details-imgs">
+                <div class="desktop">
+                    <img class="screen hideOnMobile" src="assets/img/projects/xbike_desktop.png" alt="xbike tracker desktop preview" width="930px" height="494px">
+                </div>
+                <div class="mobile">
+                    <img src="assets/img/projects/xbike_mobile.png" alt="xbike tracker nobile preview" width="240px" height="1006px">
+                </div>
+            </div>
+
+            <div class="project-description">
+                <p>XBike Tracker is a dashboard for visualizing endurance sports data such as exercise bike data.
+                    </p>
+
+                <h2>Goal</h2>
+                <p>The main requirement of this web application was being able to convert an endurance sports dataset (in .csv format) into something that is more visually appealing 
+                    and motivates the user to exercise more frequently and to improve their personal records. A mobile version of the dashboard was also required.</p>
+
+                <h2>Result</h2>
+                <p>XBike Tracker was developed using D3.js, a Javascript library for visualizing data, and displays various metrics and graphs. The graphs include a bar graph displaying the
+                     covered distance on a monthly basis, a scatter plot showing the average speed per exercise session as well as a pie chart with the distribution of distances per week day.
+                     The metrics and graphs about distance motivate the user to sport more frequently and to extend the exercise duration, whereas the metrics and graphs about speed motivate the user to beat previous speed records.
+                     </p>
+                
+                <h2>Techniques</h2>
+                <p>
+                    <ul>
+                        <li><span>D3</span></li>
+                        <li><span>HTML5</span></li>
+                        <li><span>CSS3</span></li>
+                        <li><span>JavaScript</span></li>
+                        <li><span>Git</span></li>
+                    </ul>
+                </p>
+
+                <p><a href="https://louweal.github.io/xbike-tracker" class="button">Visit website</a> 
+                    <a class="button" href="https://www.github.com/louweal/xbike-tracker"><i class="fab fa-github"></i> View on Github</a></p>
+            </div>
+        </div>
+        <p><a class="button" href="/portfolio.html"><i class="fas fa-long-arrow-alt-left"></i> Back to Portfolio</a></p>
+
+    </article>
+</body>
+
+</html>

@@ -7,6 +7,7 @@
   --light-teal: #DBEAE7;
   --teal: #27AE96;
   --dark-teal: #33534D;
+  --base-border-size: 4px;  
 }
   
 * {
@@ -21,6 +22,7 @@ html, body {
   width: 100%;
   height: 100%;
   color: #33534D;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -43,11 +45,11 @@ a {
   text-decoration: none;
   color: var(--dark-teal);
 }
-
+/*
 img {
   margin: .6em 0;
 }
-
+*/
 ul {
   list-style-type: square;
 }
@@ -62,7 +64,7 @@ ul li span {
 
 hr {
   border: none;
-  border-top: 4px solid var(--teal);
+  border-top: var(--base-border-size) solid var(--teal);
   margin: 1em 0;
   width: 100%;
 }
@@ -75,12 +77,24 @@ article { /* contains page content */
   margin: 20px auto; 
 }
 
+@media only screen and (max-width: 600px) {
+  :root {
+    --base-border-size: 3px;
+  }
+  h1 {
+    font-size: 2.1em;
+  }
+
+  p, ul {
+    font-size: .9em;
+  }
+}
 /* utilities */
 
 .button {
   display: inline-block;
-  margin-top: 2em;
-	padding: 0.5em 1.5em;
+  margin: 2em .5em 0 0;
+	padding: 0.5em 1em;
   background-color: none;
   border: 3px solid var(--dark-teal);
   text-decoration: none;
@@ -114,6 +128,7 @@ article { /* contains page content */
   display: none;
 }
 
+@keyframes slideBack { to {transform: translateX(0px)}}
 @keyframes toFullOpacity { to { opacity: 1;}}
 @keyframes scaleVertical { to { transform: scaleY(1)}}
 @keyframes grow { to { opacity: 1; transform: scale(1)}}
@@ -150,8 +165,10 @@ nav ul li {
 .menu-items {
   min-height: 55px;
   line-height: 55px;
+  transform: translateX(350px);
   opacity: 0;
-  animation: toFullOpacity 1s ease-in forwards;
+  animation: slideBack 1s ease-out forwards,
+  toFullOpacity .7s .3s ease-in forwards;
 }
 
 .menu-item {
@@ -177,7 +194,7 @@ nav ul li {
 
 @media only screen and (max-width: 600px) {
   header {
-    border-bottom: 4px solid var(--dark-teal);
+    border-bottom: var(--base-border-size) solid var(--dark-teal);
   }
 
   .logo { 
@@ -216,7 +233,7 @@ nav ul li {
   position: absolute;
   width: 343px;
   right: 0;
-  padding: 75px 20px 0 20px; 
+  padding: 65px 20px 0 20px; 
   opacity: 0;
   animation: toFullOpacity ease-in 1s 2.5s forwards;
 }
@@ -270,12 +287,7 @@ nav ul li {
     animation: move-left ease-in-out 2s 1.1s forwards; 
     border: 0px solid gold;
   }
-  
-  .hero-logo svg path:hover {
-    transform-origin: 50% 50%;
-    transform: scale(1.1)
-  }
-}
+} 
 
 .hero svg path { opacity: 0.2 }
 .hero svg path.l { animation: toFullOpacity linear .3s forwards }
@@ -320,7 +332,7 @@ nav ul li {
   height: 180px;
   background-size: 100%;
   background-image: url("assets/img/loes.png");
-  border: 4px solid var(--teal);
+  border: var(--base-border-size) solid var(--teal);
   margin-top: 22px;
   z-index: 1;
   opacity: 1;
@@ -337,7 +349,7 @@ nav ul li {
   text-align: left;
   padding: 65px 20px 40px 20px;
   margin: -25px 0 70px 0;
-  border-bottom: 4px solid var(--teal);  
+  border-bottom: var(--base-border-size) solid var(--teal);  
   transform: scaleY(0);
   transform-origin: top center;
   animation: scaleVertical 1.3s .2s ease-out forwards;
@@ -378,7 +390,7 @@ nav ul li {
   min-height: 100px;
   margin: 15px 0;
   padding: 15px 18px;
-  border: 4px solid var(--teal);
+  border: var(--base-border-size) solid var(--teal);
   transform: scaleX(1);
   animation: growShrink .9s .1s linear forwards;
 }
@@ -398,21 +410,22 @@ nav ul li {
   animation: toFullOpacity .7s 1s ease-out forwards;
 }
 
-.project-info ul {opacity: 0}
+.project-info ul {opacity: 1}
 
-.project:hover ul {opacity: 1}
+/*.project:hover ul {opacity: 1} */
 
-.project-info li {
+.project-info li, .details-content li {
   display: inline;
   margin-left: -2.2em;
   margin-right: 2.7em;
 }
 
-.project-info ul > li:before { 
+.project-info ul > li:before, .details-content ul > li:before { 
   content:'\ffed'; 
   margin-right: 0.5em;
 }
 
+/*
 .project-details {
   width: 100%;
   border: 0px solid gold;
@@ -420,11 +433,6 @@ nav ul li {
   animation: toFullOpacity 1.5s .2s linear forwards;
 }
 
-.project-details .screen {
-  border: 1em solid black;
-  border-radius: 30px;
-  box-shadow: 3px 3px 0 white;
-}
 
 .expand {
   width: 1200px;
@@ -433,6 +441,7 @@ nav ul li {
 .show {
   opacity: 1;
 }
+*/
 
 @media only screen and (max-width: 600px) {
   .portfolio, .projects, .project {
@@ -442,16 +451,134 @@ nav ul li {
   .project-info ul {
     opacity: 1;
   }
-
+  /*
   .expand {
     width: 97vw;
-  }
+  } */
 
   img {
     max-width: 85vw;
   }
 }
 
+/* project details */
+
+.details {
+  width: 1200px;
+}
+
+.details nav {
+  justify-content: center;
+}
+/*
+.details .menu-items {
+  transform: translate(0px);
+  animation: none;
+}*/
+
+.current {
+  color: var(--teal);
+  border-bottom: 0em solid var(--dark-teal);
+}
+
+.details-content {
+  border: var(--base-border-size) solid var(--teal);
+  text-align: left;
+  padding: 15px 18px;
+  margin-top: 30px;
+}
+
+
+.details-content h2 {
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-bottom: 0;
+} 
+
+.details-imgs {
+  display: flex;
+}
+
+.desktop {
+  width: 950px;
+  margin: 40px 0 25px 0;
+  border: 0px solid gold;
+}
+
+.desktop .screen {
+  width: 950px;
+  border: 10px solid black;
+  border-radius: 8px;
+}
+
+.mobile {
+  z-index: 1;
+  box-shadow: -3px 2px 4px #777;
+  width: 250px;
+  min-width: 250px;
+  height: 488px;
+  border-top: 40px solid black;
+  border-bottom: 40px solid black;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  border-radius: 30px;  
+  overflow-y: scroll;
+  transform: translate(-53px, 15px);
+  background-color: #eee;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.details-content .project-description {
+  width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+.mobile::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.mobile img {
+  animation: scrollDownAndFadeAway 4.5s .5s ease-in-out;
+}
+
+@keyframes scrollDownAndFadeAway {
+  95% {
+    opacity: 1;
+    transform: translateY(-600px)
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-600px)
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .details {
+    width: 95%;
+  }
+
+  .details-content {
+    padding: 0px;
+    border: 3px solid var(--teal);
+  }
+
+  .mobile {
+    position: relative;
+    height: 500px;
+    float: left;
+    margin: 0 auto;
+    transform: translate(0,0);
+    right: none;
+  }
+
+  .project-description {
+    max-width: 95%;
+  }
+
+}
 /* skills */ 
 .skills  {
   width: 424px;
@@ -462,7 +589,7 @@ nav ul li {
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px 0;
-  border-bottom: 4px solid var(--teal);  
+  border-bottom: var(--base-border-size) solid var(--teal);  
   transform-origin: top center;
   transform: scaleY(0);
   animation: scaleVertical 1.3s .2s ease-out forwards;
@@ -531,7 +658,7 @@ nav ul li {
 .email span {
   font-family: 'Inconsolata';
   display: inline-block;
-  border-bottom: 4px solid var(--teal);
+  border-bottom: var(--base-border-size) solid var(--teal);
   padding-bottom: .7em;
   margin-bottom: .2em;
   text-align: center;
