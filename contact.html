@@ -42,12 +42,26 @@
     </header>
 
     <article class="contact">
-        <div class="email"><span>hello@loes.dev</span></div>
 
         <div class="socials">
             <a href="https://www.github.com/louweal"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/anneloes-louwe-562867137/"><i class="fab fa-linkedin"></i></a>
             <a href="https://codepen.io/louweal"><i class="fab fa-codepen"></i></a>
+        </div>
+        <hr>
+
+        <div class="contact-form">
+            <form name="contact" method="POST" data-netlify="true">
+                <p>
+                <label>Email: <br><input type="email" name="email" /></label>
+                </p>
+                <p>
+                <label>Message: <br><textarea name="message" rows="8" placeholder="Hello Loes,"></textarea></label>
+                </p>
+                <p>
+                <button type="submit" id="submit">Send message</button>
+                </p>
+            </form>
         </div>
     
     </article>

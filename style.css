@@ -477,16 +477,16 @@ nav ul li {
 }
 
 .desktop {
-  width: 950px;
+  min-width: 950px;
   margin: 40px 0 25px 0;
-  border: 0px solid gold;
-}
-
-.desktop img {
-  width: 950px;
   border: 10px solid black;
   border-radius: 8px;
 }
+
+.desktop img {
+  width: 930px;  
+}
+
 
 .mobile {
   z-index: 1;
@@ -512,11 +512,18 @@ nav ul li {
 }
 
 
-.mobile::-webkit-scrollbar {
+.mobile::-webkit-scrollbar, .katwijk-desktop::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
 
-.mobile img#xbike {
+.katwijk-desktop {
+  max-height: 494px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+} 
+
+.mobile img.xbike {
   transform-origin: 0% 0%;
   animation: scrollDownAndFadeAwayXBike 4.5s .5s ease-in-out;
 }
@@ -532,7 +539,7 @@ nav ul li {
   }
 }
 
-.mobile img#katwijk {
+.mobile img.katwijk {
   transform-origin: 0% 0%;
   animation: scrollDownAndFadeAwayKatwijk 25s .5s ease-out;
 }
@@ -662,10 +669,10 @@ nav ul li {
 /* contact */
 
 .contact {
-  margin: 25vh auto 0 auto;
-  width: 550px;
+  margin: 15vh auto 0 auto;
+  width: 350px;
 }
-
+/*
 .email span {
   font-family: 'Inconsolata';
   display: inline-block;
@@ -680,13 +687,49 @@ nav ul li {
   animation: type 3s 0s steps(14, end) forwards}
 
 @keyframes type {to { width: 14ch}}
-
+*/
 .socials i {
   margin: .3em;
   font-size: 2em;
 }
 
 .socials a:hover { color: var(--teal) }
+
+.contact-form {
+  text-align: left;
+  padding: 1.3em;
+  /*border-bottom: var(--base-border-size) solid var(--teal); */
+}
+
+.contact-form input, .contact-form textarea {
+  border: 3px solid var(--dark-teal);
+  padding: .6em;
+  width: 100%;
+  background: transparent;
+  margin-top: .4em;
+}
+
+.contact-form button {
+  display: block;
+  border: 3px solid var(--dark-teal);
+  color: var(--light-teal);
+  margin: 1.9em .2em .1em .2em;
+	padding: 0.5em 1em;
+  background-color: var(--dark-teal);
+  margin: 2em auto;
+  font-weight: 600;
+}
+
+.contact-form button:hover {
+  background-color: var(--light-teal);
+  color: var(--dark-teal);
+  opacity: 1;
+}
+
+.contact-form input:focus, .contact-form textarea:focus { 
+  outline: none;
+  border: 3px solid var(--teal);
+}
 
 @media only screen and (max-width: 600px) {
   .contact {
