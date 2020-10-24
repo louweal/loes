@@ -481,12 +481,19 @@ nav ul li {
   margin: 40px 0 25px 0;
   border: 10px solid black;
   border-radius: 8px;
+  max-height: 494px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .desktop img {
   width: 930px;  
 }
 
+.xbike .desktop, .xbike .mobile { background-color: #eee }
+
+.katwijk .desktop, .katwijk .mobile { background-color:#8F351E } 
 
 .mobile {
   z-index: 1;
@@ -500,31 +507,23 @@ nav ul li {
   border-radius: 30px;  
   overflow-y: scroll;
   transform: translate(-53px, 15px);
-  background-color: #eee;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
-.details-content .project-description {
+.project-description {
   width: 600px;
   margin: 0 auto;
   padding: 0 10px;
 }
 
 
-.mobile::-webkit-scrollbar, .katwijk-desktop::-webkit-scrollbar {
+.mobile::-webkit-scrollbar, .desktop::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
 
-.katwijk-desktop {
-  max-height: 494px;
-  overflow-y: scroll;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-} 
 
-.mobile img.xbike {
-  transform-origin: 0% 0%;
+.xbike .mobile img {
   animation: scrollDownAndFadeAwayXBike 4.5s .5s ease-in-out;
 }
 
@@ -539,7 +538,7 @@ nav ul li {
   }
 }
 
-.mobile img.katwijk {
+.katwijk .mobile img {
   transform-origin: 0% 0%;
   animation: scrollDownAndFadeAwayKatwijk 25s .5s ease-out;
 }
@@ -567,21 +566,29 @@ nav ul li {
   }
 
   .desktop {
+    min-width: 0px;
+    max-width: 91%;
+    margin: 0 auto;
+    max-height: 195px;
+    overflow-y: hidden;
     margin-top: 15px;
-  }
-
-  .desktop img {
-    display:block;
-    width: 91%;
     border: 5px solid black;
     border-radius: 4px;
-    margin: 0 auto;
-    height: auto;
+  }
+
+
+  .desktop img {
+    max-width: 100%;
+  }
+
+  .katwijk .desktop img {
+    transform-origin: top center;
+    transform: scale(1.5);
   }
 
   .project-description {
     max-width: 95%;
-    padding: 0;
+    margin-top: 15px;
   }
 
   .external-links {
@@ -734,7 +741,10 @@ nav ul li {
 @media only screen and (max-width: 600px) {
   .contact {
     width: 90%;
-    margin-top: 15vh;
-    font-size: 50%;
+    margin-top: 40px;
+  }
+
+  .contact i {
+    font-size: 2em;
   }
 }
