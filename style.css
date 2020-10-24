@@ -65,7 +65,7 @@ ul li span {
 hr {
   border: none;
   border-top: var(--base-border-size) solid var(--teal);
-  margin: 1em 0;
+  margin: 1em 0 0 0;
   width: 100%;
 }
 
@@ -93,7 +93,7 @@ article { /* contains page content */
 
 .button {
   display: inline-block;
-  margin: 2em .5em 0 0;
+  margin: 1.9em .2em .1em .2em;
 	padding: 0.5em 1em;
   background-color: none;
   border: 3px solid var(--dark-teal);
@@ -412,8 +412,6 @@ nav ul li {
 
 .project-info ul {opacity: 1}
 
-/*.project:hover ul {opacity: 1} */
-
 .project-info li, .details-content li {
   display: inline;
   margin-left: -2.2em;
@@ -426,38 +424,22 @@ nav ul li {
 }
 
 /*
-.project-details {
-  width: 100%;
-  border: 0px solid gold;
-  opacity: .5;
-  animation: toFullOpacity 1.5s .2s linear forwards;
-}
+.portfolio, .projects, .project {
+  border: 1px solid gold;
+}*/
 
-
-.expand {
-  width: 1200px;
-}
-
-.show {
-  opacity: 1;
-}
-*/
 
 @media only screen and (max-width: 600px) {
-  .portfolio, .projects, .project {
-    width: 98%;
+  .portfolio {
+    width: 93%;
+  }
+
+  .projects, .project {
+    width: 100%;
   }
 
   .project-info ul {
     opacity: 1;
-  }
-  /*
-  .expand {
-    width: 97vw;
-  } */
-
-  img {
-    max-width: 85vw;
   }
 }
 
@@ -470,11 +452,6 @@ nav ul li {
 .details nav {
   justify-content: center;
 }
-/*
-.details .menu-items {
-  transform: translate(0px);
-  animation: none;
-}*/
 
 .current {
   color: var(--teal);
@@ -505,7 +482,7 @@ nav ul li {
   border: 0px solid gold;
 }
 
-.desktop .screen {
+.desktop img {
   width: 950px;
   border: 10px solid black;
   border-radius: 8px;
@@ -517,10 +494,9 @@ nav ul li {
   width: 250px;
   min-width: 250px;
   height: 488px;
-  border-top: 40px solid black;
-  border-bottom: 40px solid black;
-  border-left: 5px solid black;
-  border-right: 5px solid black;
+  border: 40px solid black;
+  border-left-width: 5px;
+  border-right-width: 5px;
   border-radius: 30px;  
   overflow-y: scroll;
   transform: translate(-53px, 15px);
@@ -532,7 +508,7 @@ nav ul li {
 .details-content .project-description {
   width: 600px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 
@@ -540,20 +516,38 @@ nav ul li {
   display: none; /* Chrome, Safari and Opera */
 }
 
-.mobile img {
-  animation: scrollDownAndFadeAway 4.5s .5s ease-in-out;
+.mobile img#xbike {
+  transform-origin: 0% 0%;
+  animation: scrollDownAndFadeAwayXBike 4.5s .5s ease-in-out;
 }
 
-@keyframes scrollDownAndFadeAway {
+@keyframes scrollDownAndFadeAwayXBike {
   95% {
     opacity: 1;
-    transform: translateY(-600px)
+    transform: translateY(-598px) /* 1006 - (488 - 80) */
   }
   100% {
     opacity: 0;
-    transform: translateY(-600px)
+    transform: translateY(-598px)
   }
 }
+
+.mobile img#katwijk {
+  transform-origin: 0% 0%;
+  animation: scrollDownAndFadeAwayKatwijk 25s .5s ease-out;
+}
+
+@keyframes scrollDownAndFadeAwayKatwijk {
+  95% {
+    opacity: 1;
+    transform: translateY(-4042px) /* 4450 - (488 - 80)  */
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4042px)
+  }
+}
+
 
 @media only screen and (max-width: 600px) {
   .details {
@@ -565,19 +559,27 @@ nav ul li {
     border: 3px solid var(--teal);
   }
 
-  .mobile {
-    position: relative;
-    height: 500px;
-    float: left;
+  .desktop {
+    margin-top: 15px;
+  }
+
+  .desktop img {
+    display:block;
+    width: 91%;
+    border: 5px solid black;
+    border-radius: 4px;
     margin: 0 auto;
-    transform: translate(0,0);
-    right: none;
+    height: auto;
   }
 
   .project-description {
     max-width: 95%;
+    padding: 0;
   }
 
+  .external-links {
+    text-align: center;
+  }
 }
 /* skills */ 
 .skills  {
@@ -588,7 +590,7 @@ nav ul li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px 0;
+  padding: 1em 0;
   border-bottom: var(--base-border-size) solid var(--teal);  
   transform-origin: top center;
   transform: scaleY(0);
@@ -614,14 +616,15 @@ nav ul li {
 
 .skill-icon i {
   color: var(--dark-teal);
-  font-size: 100px;
-  line-height: 120px;
+  font-size: 6.25em; /* 100px */
+  line-height: 1.2em; /* 120px */
 }
 
 .skill-data {
-  height: 120px;
+  height: 7.5em; /* 6.25 * 1.2 */
   color: var(--light-teal);
-  padding: 26px 14px 0 14px;
+  text-align: center;
+  padding-top: 1.6em;
   opacity: 0.9;
   transform: scale(0.92);
   animation: grow .3s .1s ease-in forwards;
@@ -636,15 +639,23 @@ nav ul li {
 
 @media only screen and (max-width: 600px) {
   .skills {
-    width: 90%;
+    width: 85%;
   }
 
   .skill-icon i {
-    font-size: 80px;
+    font-size: 4.5em;
+    line-height: 1.2em;
   }
 
   .skill-data h2, .skill-data i {
-    font-size: .75em;
+    font-size: .70em;
+  }
+  .skill-data {
+    padding-top: 1.1em;
+  }
+
+  .skill-data {
+    height: 5.4em;
   }
 }
 
