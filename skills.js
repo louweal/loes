@@ -34,16 +34,14 @@ function showRating(score) {
     if(score === 1) {
         return star(true) + star(false) + star(false) + star(false) + star(false) 
     }
-    if(score === 0) {
-        return "";
-    }
+    return "";
 }
 
 function star(bool) {
     if (bool) {
-        return '<i class="fas fa-star"></i>'
+        return '<i class="fas fa-star"></i>' // solid star
     }
-    return '<i class="far fa-star"></i>'
+    return '<i class="far fa-star"></i>' // empty star
 }
 
 function showSkill(elem) {
