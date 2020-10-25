@@ -38,7 +38,7 @@ h2 {
 }
 
 p {
-  margin: .6em 0;
+  margin: .9em 0;
 }
 
 a {
@@ -260,7 +260,7 @@ nav ul li {
 .hero .button { /* View portfolio button */ 
   transform-origin: center center;
   transform: scale(0);
-  animation: grow 1s 5.3s ease-out forwards
+  animation: grow 1s 5.3s ease-out forwards;
 }
 
 @media only screen and (max-width: 600px) { /* mobile devices */
@@ -324,7 +324,7 @@ nav ul li {
 
 .about {
   align-items: center;
-  width: 550px;
+  width: 510px;
 }
 
 .photo {
@@ -676,36 +676,46 @@ nav ul li {
 /* contact */
 
 .contact {
+  display: flex;
+  flex-direction: row;
   margin: 15vh auto 0 auto;
-  width: 350px;
+  width: 450px;
 }
-/*
-.email span {
-  font-family: 'Inconsolata';
-  display: inline-block;
-  border-bottom: var(--base-border-size) solid var(--teal);
-  padding-bottom: .7em;
-  margin-bottom: .2em;
-  text-align: center;
-  font-size: 4em;
-  width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: type 3s 0s steps(14, end) forwards}
 
-@keyframes type {to { width: 14ch}}
-*/
+.contact h1 {
+  font-size: 2em;
+  margin-bottom: .5em; 
+}
+
+.socials {
+  max-width: 60px;
+  align-self: center;
+}
+
 .socials i {
   margin: .3em;
   font-size: 2em;
+  transform: scale(0.6);
+}
+
+.socials i:hover {
+  animation: grow .5s ease-out forwards;
 }
 
 .socials a:hover { color: var(--teal) }
 
 .contact-form {
   text-align: left;
+  align-self: center;
+  flex-grow: 1;
   padding: 1.3em;
-  /*border-bottom: var(--base-border-size) solid var(--teal); */
+  border-left: var(--base-border-size) solid var(--teal);
+}
+
+.contact-input {
+  opacity: 0;
+  transform: translateY(-25px);
+  animation: slideUp 1s .2s ease-out forwards; 
 }
 
 .contact-form input, .contact-form textarea {
@@ -720,11 +730,11 @@ nav ul li {
   display: block;
   border: 3px solid var(--dark-teal);
   color: var(--light-teal);
-  margin: 1.9em .2em .1em .2em;
 	padding: 0.5em 1em;
   background-color: var(--dark-teal);
-  margin: 2em auto;
+  margin: 2.5em 0 2em 0;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .contact-form button:hover {
@@ -738,10 +748,24 @@ nav ul li {
   border: 3px solid var(--teal);
 }
 
+#send-succes {
+  margin: 3em 0;
+}
+
 @media only screen and (max-width: 600px) {
   .contact {
-    width: 90%;
-    margin-top: 40px;
+    width: 100%;
+    margin: 20px auto;
+    flex-direction: column;
+  }
+
+  .socials {
+    max-width: 100%;
+    order: 2;
+  }
+
+  .contact-form {
+    border: none;
   }
 
   .contact i {

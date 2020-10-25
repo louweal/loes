@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
     <script src="script.js"></script>
+    <script src="contact.js"></script>
 </head>
 
 <body>
@@ -44,25 +45,38 @@
     <article class="contact">
 
         <div class="socials">
-            <a href="https://www.github.com/louweal"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/anneloes-louwe-562867137/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://codepen.io/louweal"><i class="fab fa-codepen"></i></a>
+            <a href="https://www.github.com/louweal" aria-label="github profile"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/anneloes-louwe-562867137/" aria-label="linkedin profile"><i class="fab fa-linkedin"></i></a>
+            <a href="https://codepen.io/louweal" aria-label="codepen dashboard"><i class="fab fa-codepen"></i></a>
         </div>
-        <hr>
 
         <div class="contact-form">
-            <form name="contact" method="POST" data-netlify="true">
-                <p>
-                <label>Email: <br><input type="email" name="email" /></label>
-                </p>
-                <p>
-                <label>Message: <br><textarea name="message" rows="8" placeholder="Hello Loes,"></textarea></label>
-                </p>
-                <p>
-                <button type="submit" id="submit">Send message</button>
-                </p>
-            </form>
+
+            <div class="contact-input" id="contact-form">
+                <h1>Contact</h1>
+
+                <form name="contact" method="POST" netlify-honeypot="name" data-netlify="true" action="contact.html?success=true">
+                    <p class="hide">
+                        <label>Name:<br> <input name="name" /></label>
+                    </p>
+                    <p>
+                        <label>Questions? Ideas? Let me know!<br><textarea name="message" rows="8" required></textarea></label>
+                    </p>
+                    <p>
+                    <label>Your e-mail:<br><input type="email" name="email" required /></label>
+                    </p>
+                    <p>
+                    <button type="submit" id="submit">Send message</button>
+                    </p>
+                </form>
+            </div>
+
+            <div id="send-succes" class="hide">
+                <p><b>Thank you!</b></p> 
+                <p>Your message has been send.</p>
+            </div>
         </div>
+
     
     </article>
 </body>
