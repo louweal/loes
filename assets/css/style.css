@@ -273,6 +273,7 @@ nav ul li {
   position: absolute;
   width: 343px;
   right: 0;
+  top: 0;
   padding: 115px 20px 0 20px; 
   opacity: 0;
   -webkit-animation: toFullOpacity ease-in 1s 3.5s forwards;
@@ -319,13 +320,22 @@ nav ul li {
     margin: 0 auto;
   }
 
+  .hero-logo {
+    padding-top: 0px;
+    margin-top: 50px;
+  }
+
+  .hero-content {
+    padding-top: 45px;
+  }
+
   .splash {
     display: block;
     position: fixed;
     z-index: 1;
-    -webkit-transform-origin: center left;
-        -ms-transform-origin: center left;
-            transform-origin: center left;
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left;
     -webkit-transform: scale(.57);
         -ms-transform: scale(.57);
             transform: scale(.57);
@@ -341,7 +351,6 @@ nav ul li {
     left: 43px;
     -webkit-animation: move-left ease-in-out 2s 1.9s forwards;
             animation: move-left ease-in-out 2s 1.9s forwards; 
-    border: 0px solid gold;
   }
 } 
 
@@ -372,21 +381,15 @@ nav ul li {
 }
 
 @-webkit-keyframes hide-splash { /* mobile logo animation */
-  99% {
+  to { 
     opacity: 0;
-    -webkit-transform: scale(.57);
-            transform: scale(.57);
-  }
-  100% { -webkit-transform: scale(0); transform: scale(0) }
+    }
 }
 
 @keyframes hide-splash { /* mobile logo animation */
-  99% {
+  to {
     opacity: 0;
-    -webkit-transform: scale(.57);
-            transform: scale(.57);
   }
-  100% { -webkit-transform: scale(0); transform: scale(0) }
 }
 
 @-webkit-keyframes slideUp { /* h2 text animation */
