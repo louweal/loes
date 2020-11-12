@@ -615,8 +615,10 @@ nav ul li {
 }
 
 .xbike .desktop, .xbike .mobile { background-color: #eee }
-
 .katwijk .desktop, .katwijk .mobile { background-color:#8F351E } 
+.memini .desktop { background-color:#252326 }
+.memini .mobile { background-color:#ededed } 
+
 
 .mobile {
   z-index: 1;
@@ -711,6 +713,40 @@ nav ul li {
     opacity: 0;
     -webkit-transform: translateY(-4042px);
             transform: translateY(-4042px)
+  }
+}
+
+.memini .mobile img {
+  -webkit-transform-origin: 0% 0%;
+      -ms-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  -webkit-animation: scrollDownAndFadeAwayMemini 4s .5s ease-out;
+          animation: scrollDownAndFadeAwayMemini 4s .5s ease-out;
+}
+
+@-webkit-keyframes scrollDownAndFadeAwayMemini {
+  95% {
+    opacity: 1;
+    -webkit-transform: translateY(-394px);
+            transform: translateY(-394px) /* 802 - (488 - 80)  */
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-394px);
+            transform: translateY(-394px)
+  }
+}
+
+@keyframes scrollDownAndFadeAwayMemini {
+  95% {
+    opacity: 1;
+    -webkit-transform: translateY(-394px);
+            transform: translateY(-394px) /* 802 - (488 - 80)  */
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-394px);
+            transform: translateY(-394px)
   }
 }
 
@@ -883,14 +919,14 @@ nav ul li {
 .socials i {
   margin: .3em;
   font-size: 2em;
-  -webkit-transform: scale(0.6);
-      -ms-transform: scale(0.6);
-          transform: scale(0.6);
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 .socials i:hover {
-  -webkit-animation: grow .5s ease-out forwards;
-          animation: grow .5s ease-out forwards;
+  -webkit-animation: grow .3s ease-out forwards;
+          animation: grow .3s ease-out forwards;
 }
 
 .socials a:hover { color: var(--teal) }
