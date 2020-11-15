@@ -26,8 +26,8 @@
             <div class="logo"></div>
         </a>
     
-        <nav onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
-            <div class="menu-items hideOnDesktop" id="menu">
+        <nav onclick="showMenu(this)" onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
+            <div class="menu-items hide" id="menu">
                 <ul>
                     <li><a class="menu-item" href="about.html">Over mij</a></li>
                     <li><a class="menu-item" href="portfolio.html">Portfolio</a></li>
@@ -35,10 +35,11 @@
                     <li><a class="menu-item" href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="menu-icon hideOnMobile" id="menu-icon">
+            <div class="menu-icon" id="menu-icon">
                 <i class="fa fa-bars"></i>
             </div>
         </nav>
+
 
     </header>
 
@@ -75,13 +76,14 @@
                         <li><span>CSS3</span></li>
                         <li><span>JavaScript</span></li>
                         <li><span>jQuery</span></li>
-                        <li><span>Git</span></li>
                     </ul>
                 </p>
 
                 <div class="external-links">
-                    <p><a href="https://memini-app.herokuapp.com/landing.html" class="button">Bezoek website</a>
+                    <p><a href="https://memini-app.herokuapp.com/landing.html" class="button">Bezoek website*</a>
                     <a href="https://github.com/louweal/memini-react" class="button"><i class="fab fa-github"></i> Bekijk op Github</a></p>
+
+                    <p>* het opstarten van de server kan een minuutje duren</p>
                 </div>
             </div>
         </div>
