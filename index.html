@@ -25,8 +25,8 @@
             <div class="logo hideOnDesktop"></div>
         </a>
 
-        <nav onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
-            <div class="menu-items hideOnDesktop" id="menu">
+        <nav onclick="showMenu(this)" onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
+            <div class="menu-items hide" id="menu">
                 <ul>
                     <li><a class="menu-item" href="about.html">Over mij</a></li>
                     <li><a class="menu-item" href="portfolio.html">Portfolio</a></li>
@@ -34,7 +34,7 @@
                     <li><a class="menu-item" href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="menu-icon hideOnMobile" id="menu-icon">
+            <div class="menu-icon" id="menu-icon">
                 <i class="fa fa-bars"></i>
             </div>
         </nav>
@@ -42,7 +42,7 @@
     </header>
 
     <div class="hero">
-        <div class="hero-logo splash">
+        <div class="hero-logo hideOnMobile">
             <svg width="601" height="600" viewBox="0 0 601 600" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path class="l" d="M299.875 299.576L599.451 299.576L532.347 232.471L366.981 232.471L366.981 62.3119L299.875 0L299.875 299.576Z" fill="#27AE96"/>
                 <path class="o" fill-rule="evenodd" clip-rule="evenodd" d="M299.877 299.576L299.877 600L450.512 450.212L600.3 299.576L299.877 299.576ZM367.422 369.716H436.107L403.96 401.863L367.422 438.401V369.716Z" fill="#33534D"/>
