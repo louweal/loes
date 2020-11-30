@@ -1,0 +1,76 @@
+@import './variables';
+@import './mixins';
+
+.skills {
+  @include page-container(424px);
+}
+
+.skillset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em 0;
+  border-bottom: $base-border-size solid $teal;
+  transform-origin: top center;
+  transform: scaleY(0);
+  animation: scaleVertical 1.3s .2s ease-out forwards;
+}
+
+.skill {
+  width: 30%;
+  margin: 1%;
+  opacity: 0;
+  animation: toFullOpacity 1s 1.5s ease-out forwards;
+}
+
+.skill-data {
+  background-color: $dark-teal;
+}
+
+.skill-icon {
+  opacity: 0.9;
+  transform: scale(0.92);
+  animation: grow .2s 2.0s linear forwards;
+
+  i {
+    color: $dark-teal;
+    font-size: 6.25em;
+    line-height: 1.2em;
+  }
+}
+
+.skill-data {
+  height: 7.5em; /* 6.25 * 1.2 */
+  color: $light-teal;
+  text-align: center;
+  padding-top: 1.6em;
+  opacity: 0.9;
+  transform: scale(0.92);
+  animation: grow .3s .1s ease-in forwards;
+
+  h2 {
+    color: $light-teal;
+    font-size: 1.1em;
+    margin-bottom: .9em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .skills {
+    width: 85%;
+  }
+
+  .skill-icon i {
+    font-size: 4.5em;
+    line-height: 1.2em;
+  }
+
+  .skill-data {
+    h2, i {
+      font-size: .70em;
+    }
+
+    padding-top: 1.1em;
+    height: 5.4em;
+  }
+}

@@ -1,0 +1,109 @@
+@import "./variables";
+@import "./mixins";
+
+.project {
+    @include page-container(1200px);
+}
+
+.project nav {
+    justify-content: center;
+}
+
+.project-content {
+    border: $base-border-size solid $teal;
+    text-align: left;
+    padding: 15px 18px;
+    margin-top: 30px;
+}
+
+.project-content h2 {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+
+.project-imgs {
+    display: flex;
+}
+
+.desktop {
+    min-width: 950px;
+    margin: 40px 0 25px 0;
+    border: 10px solid black;
+    border-radius: 8px;
+    max-height: 494px;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.desktop img {
+    width: 930px;
+}
+
+.mobile {
+    z-index: 1;
+    box-shadow: -3px 2px 4px #777;
+    width: 250px;
+    min-width: 250px;
+    height: 488px;
+    border: 40px solid black;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-radius: 30px;
+    overflow-y: scroll;
+    transform: translate(-53px, 15px);
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.project-description {
+    width: 600px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.mobile::-webkit-scrollbar,
+.desktop::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+@import './projects/xbike';
+@import './projects/mastermind';
+@import './projects/memini';
+@import './projects/katwijk';
+
+@media only screen and (max-width: 600px) {
+    .project {
+        width: 95%;
+    }
+
+    .project-content {
+        padding: 0px;
+        border: 3px solid $teal;
+    }
+
+    .desktop {
+        min-width: 0px;
+        max-width: 91%;
+        margin: 0 auto;
+        max-height: 195px;
+        overflow-y: hidden;
+        margin-top: 15px;
+        border: 5px solid black;
+        border-radius: 4px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .project-description {
+        max-width: 95%;
+        margin-top: 15px;
+    }
+
+    .external-links {
+        text-align: center;
+    }
+}

@@ -1,0 +1,150 @@
+@import "./variables";
+@import "./mixins";
+
+.hero {
+    position: relative;
+    width: 686px;
+    justify-content: center;
+    margin: 10vh auto;
+    border: 0px solid silver;
+
+    svg path {
+        opacity: 0.2;
+    }
+    svg path.l {
+        animation: toFullOpacity linear 0.5s forwards;
+    }
+    svg path.o {
+        animation: toFullOpacity linear 0.5s 0.5s forwards;
+    }
+    svg path.e {
+        animation: toFullOpacity linear 0.5s 1s forwards;
+    }
+    svg path.s {
+        animation: toFullOpacity linear 0.5s 1.5s forwards;
+    }
+
+    h1 {
+        font-size: 4.4em;
+    }
+
+    h2 {
+        display: inline-block;
+        font-weight: 100;
+        margin: 0.3em 0em;
+        padding: 0.2em 0em;
+        opacity: 0;
+        transform-origin: bottom center;
+        transform: translateY(60px);
+        border-bottom: 3px solid $teal;
+    }
+
+    h2.front {
+        animation: slideUp 1s 3.5s ease-out forwards;
+    }
+
+    h2.ux {
+        animation: slideUp 1s 4.5s ease-out forwards;
+    }
+
+    h2.web {
+        animation: slideUp 1s 5.5s ease-out forwards;
+    }
+
+    .button {
+        /* View portfolio button */
+        transform-origin: center center;
+        transform: scale(0);
+        animation: grow 1s 5.8s ease-out forwards;
+    }
+}
+
+.hero-content {
+    position: absolute;
+    width: 343px;
+    right: 0;
+    top: 0;
+    padding: 115px 20px 0 20px;
+    opacity: 0;
+    animation: toFullOpacity ease-in 1s 3.5s forwards;
+}
+
+@media only screen and (max-width: 600px) {
+    /* mobile devices */
+    .hero {
+        width: 343px;
+        margin: 0 auto;
+
+        h2.front {
+            animation: slideUp 1s 0.5s ease-out forwards;
+        }
+
+        h2.ux {
+            animation: slideUp 1s 1.5s ease-out forwards;
+        }
+
+        h2.web {
+            animation: slideUp 1s 2.5s ease-out forwards;
+        }
+    
+        .button {
+            /* View portfolio button */
+            transform-origin: center center;
+            transform: scale(0);
+            animation: grow 1s 2.8s ease-out forwards;
+        }
+    }
+
+    .hero-logo {
+        padding-top: 0px;
+        margin-top: 50px;
+    }
+
+    .hero-content {
+        padding-top: 45px;
+        animation: toFullOpacity ease-in 1s 0.5s forwards;
+    }
+
+}
+
+@media only screen and (min-width: 601px) {
+    /* larger devices */
+    .hero-logo {
+        position: absolute;
+        width: 600px;
+        left: 43px;
+        animation: move-left ease-in-out 2s 1.9s forwards;
+    }
+}
+
+
+
+/* homepage animations */
+@keyframes move-left {
+    /* desktop logo animation */
+    50% {
+        transform: scale(0.57);
+    }
+    100% {
+        transform-origin: left center;
+        transform: translate(-43px) scale(0.57);
+    }
+}
+
+@keyframes hide-splash {
+    /* mobile logo animation */
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideUp {
+    /* h2 text animation */
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

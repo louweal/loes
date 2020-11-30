@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC,QAAQ;AACpB,WAAW,CAAC,OAAO,CAAC;EAChB,gBAAgB,EAAE,OAAO;CAC5B",
+    "sources": [
+        "mastermind.scss"
+    ],
+    "names": [],
+    "file": "mastermind.css"
+}

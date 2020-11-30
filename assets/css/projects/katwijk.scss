@@ -1,0 +1,11 @@
+
+.katwijk .desktop,
+.katwijk .mobile {
+    background-color: #8f351e;
+}
+
+.katwijk .mobile img {
+    transform-origin: 0% 0%;
+    --scroll-px: -4042px;
+    animation: variable-scroll-down 25s 0.5s ease-out;
+}

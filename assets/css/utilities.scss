@@ -1,0 +1,71 @@
+@import "./variables";
+
+.button {
+    display: inline-block;
+    margin: 1.9em 0.2em 0.1em 0.2em;
+    padding: 0.5em 1em;
+    background-color: none;
+    border: 3px solid $dark-teal;
+    text-decoration: none;
+    text-align: center;
+    color: $dark-teal;
+
+    &:hover {
+        background-color: $dark-teal;
+        color: $light-teal;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.hideOnDesktop {
+    display: none;
+}
+
+.hideOnMobile {
+    display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+    .hideOnDesktop {
+        display: block;
+    }
+    .hideOnMobile {
+        display: none;
+    }
+}
+
+@keyframes slideBack {
+    to {
+        transform: translateX(0px);
+    }
+}
+@keyframes toFullOpacity {
+    to {
+        opacity: 1;
+    }
+}
+@keyframes scaleVertical {
+    to {
+        transform: scaleY(1);
+    }
+}
+@keyframes grow {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes variable-scroll-down {
+    95% {
+        opacity: 1;
+        transform: translateY(var(--scroll-px));
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(var(--scroll-px));
+    }
+}

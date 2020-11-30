@@ -1,0 +1,11 @@
+.xbike .desktop,
+.xbike .mobile {
+  background-color: #eee;
+}
+
+.xbike .mobile img {
+  --scroll-px: -598px;
+  -webkit-animation: variable-scroll-down 4.5s 0.5s ease-in-out;
+          animation: variable-scroll-down 4.5s 0.5s ease-in-out;
+}
+/*# sourceMappingURL=xbike.css.map */

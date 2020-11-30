@@ -1,0 +1,202 @@
+.hero {
+  position: relative;
+  width: 686px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10vh auto;
+  border: 0px solid silver;
+}
+
+.hero svg path {
+  opacity: 0.2;
+}
+
+.hero svg path.l {
+  -webkit-animation: toFullOpacity linear 0.5s forwards;
+          animation: toFullOpacity linear 0.5s forwards;
+}
+
+.hero svg path.o {
+  -webkit-animation: toFullOpacity linear 0.5s 0.5s forwards;
+          animation: toFullOpacity linear 0.5s 0.5s forwards;
+}
+
+.hero svg path.e {
+  -webkit-animation: toFullOpacity linear 0.5s 1s forwards;
+          animation: toFullOpacity linear 0.5s 1s forwards;
+}
+
+.hero svg path.s {
+  -webkit-animation: toFullOpacity linear 0.5s 1.5s forwards;
+          animation: toFullOpacity linear 0.5s 1.5s forwards;
+}
+
+.hero h1 {
+  font-size: 4.4em;
+}
+
+.hero h2 {
+  display: inline-block;
+  font-weight: 100;
+  margin: 0.3em 0em;
+  padding: 0.2em 0em;
+  opacity: 0;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+  border-bottom: 3px solid #27AE96;
+}
+
+.hero h2.front {
+  -webkit-animation: slideUp 1s 3.5s ease-out forwards;
+          animation: slideUp 1s 3.5s ease-out forwards;
+}
+
+.hero h2.ux {
+  -webkit-animation: slideUp 1s 4.5s ease-out forwards;
+          animation: slideUp 1s 4.5s ease-out forwards;
+}
+
+.hero h2.web {
+  -webkit-animation: slideUp 1s 5.5s ease-out forwards;
+          animation: slideUp 1s 5.5s ease-out forwards;
+}
+
+.hero .button {
+  /* View portfolio button */
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: grow 1s 5.8s ease-out forwards;
+          animation: grow 1s 5.8s ease-out forwards;
+}
+
+.hero-content {
+  position: absolute;
+  width: 343px;
+  right: 0;
+  top: 0;
+  padding: 115px 20px 0 20px;
+  opacity: 0;
+  -webkit-animation: toFullOpacity ease-in 1s 3.5s forwards;
+          animation: toFullOpacity ease-in 1s 3.5s forwards;
+}
+
+@media only screen and (max-width: 600px) {
+  /* mobile devices */
+  .hero {
+    width: 343px;
+    margin: 0 auto;
+  }
+  .hero h2.front {
+    -webkit-animation: slideUp 1s 0.5s ease-out forwards;
+            animation: slideUp 1s 0.5s ease-out forwards;
+  }
+  .hero h2.ux {
+    -webkit-animation: slideUp 1s 1.5s ease-out forwards;
+            animation: slideUp 1s 1.5s ease-out forwards;
+  }
+  .hero h2.web {
+    -webkit-animation: slideUp 1s 2.5s ease-out forwards;
+            animation: slideUp 1s 2.5s ease-out forwards;
+  }
+  .hero .button {
+    /* View portfolio button */
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-animation: grow 1s 2.8s ease-out forwards;
+            animation: grow 1s 2.8s ease-out forwards;
+  }
+  .hero-logo {
+    padding-top: 0px;
+    margin-top: 50px;
+  }
+  .hero-content {
+    padding-top: 45px;
+    -webkit-animation: toFullOpacity ease-in 1s 0.5s forwards;
+            animation: toFullOpacity ease-in 1s 0.5s forwards;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  /* larger devices */
+  .hero-logo {
+    position: absolute;
+    width: 600px;
+    left: 43px;
+    -webkit-animation: move-left ease-in-out 2s 1.9s forwards;
+            animation: move-left ease-in-out 2s 1.9s forwards;
+  }
+}
+
+/* homepage animations */
+@-webkit-keyframes move-left {
+  /* desktop logo animation */
+  50% {
+    -webkit-transform: scale(0.57);
+            transform: scale(0.57);
+  }
+  100% {
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transform: translate(-43px) scale(0.57);
+            transform: translate(-43px) scale(0.57);
+  }
+}
+@keyframes move-left {
+  /* desktop logo animation */
+  50% {
+    -webkit-transform: scale(0.57);
+            transform: scale(0.57);
+  }
+  100% {
+    -webkit-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transform: translate(-43px) scale(0.57);
+            transform: translate(-43px) scale(0.57);
+  }
+}
+
+@-webkit-keyframes hide-splash {
+  /* mobile logo animation */
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes hide-splash {
+  /* mobile logo animation */
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideUp {
+  /* h2 text animation */
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes slideUp {
+  /* h2 text animation */
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+/*# sourceMappingURL=index.css.map */
