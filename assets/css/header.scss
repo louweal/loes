@@ -44,6 +44,14 @@ nav ul li {
     }
 }
 
+.menu-active {
+    color: $teal;
+    
+    &:hover {
+        border-bottom: 0.2em solid transparent;
+    }
+}
+
 .menu-icon {
     min-height: 55px;
     line-height: 55px;

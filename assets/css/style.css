@@ -262,6 +262,14 @@ nav ul li {
   border-bottom: 0.2em solid #27AE96;
 }
 
+.menu-active {
+  color: #27AE96;
+}
+
+.menu-active:hover {
+  border-bottom: 0.2em solid transparent;
+}
+
 .menu-icon {
   min-height: 55px;
   line-height: 55px;

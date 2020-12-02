@@ -1,3 +1,7 @@
+:root {
+  --scroll-px: 0px;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,6 +59,14 @@ nav ul li {
 
 .menu-item:hover {
   border-bottom: 0.2em solid #27AE96;
+}
+
+.menu-active {
+  color: #27AE96;
+}
+
+.menu-active:hover {
+  border-bottom: 0.2em solid transparent;
 }
 
 .menu-icon {

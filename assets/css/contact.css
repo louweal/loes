@@ -1,3 +1,7 @@
+:root {
+  --scroll-px: 0px;
+}
+
 .contact {
   display: -webkit-box;
   display: -ms-flexbox;
