@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./mixins";
+@import "variables";
+@import "mixins";
 
 .project {
     @include page-container(1200px);
@@ -68,10 +68,10 @@
     display: none; /* Chrome, Safari and Opera */
 }
 
-@import './projects/xbike';
-@import './projects/mastermind';
-@import './projects/memini';
-@import './projects/katwijk';
+@import './projects/_xbike';
+@import './projects/_mastermind';
+@import './projects/_memini';
+@import './projects/_katwijk';
 
 @media only screen and (max-width: 600px) {
     .project {

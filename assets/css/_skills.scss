@@ -1,8 +1,8 @@
-@import './variables';
-@import './mixins';
+@import "variables";
+@import "mixins";
 
 .skills {
-  @include page-container(424px);
+  @include page-container(560px);
 }
 
 .skillset {
@@ -17,7 +17,7 @@
 }
 
 .skill {
-  width: 30%;
+  width: 23%;
   margin: 1%;
   opacity: 0;
   animation: toFullOpacity 1s 1.5s ease-out forwards;
@@ -25,6 +25,7 @@
 
 .skill-data {
   background-color: $dark-teal;
+  padding: 7px;
 }
 
 .skill-icon {
@@ -37,6 +38,17 @@
     font-size: 6.25em;
     line-height: 1.2em;
   }
+
+  svg {
+    margin-top: 13px;
+    width: 100px;
+    height: 95px;
+  }
+}
+
+.shrink {
+  margin-top: 1.5em;
+  font-size: .7em;
 }
 
 .skill-data {
@@ -60,9 +72,21 @@
     width: 85%;
   }
 
-  .skill-icon i {
-    font-size: 4.5em;
-    line-height: 1.2em;
+  .skill {
+    width: 30%;
+  }
+
+
+  .skill-icon {
+    i {
+      font-size: 4.5em; /* 72% */
+      line-height: 1.2em;
+    }
+
+    svg {
+      margin-top: 7px;
+      height: 68px;
+    }
   }
 
   .skill-data {

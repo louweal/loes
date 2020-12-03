@@ -15,6 +15,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById("skill-rating-python").innerHTML = showRating(5);
     document.getElementById("skill-rating-php").innerHTML = showRating(3);
     document.getElementById("skill-rating-mysql").innerHTML = showRating(3);
+    document.getElementById("skill-rating-redux").innerHTML = showRating(0);
+    document.getElementById("skill-rating-sass").innerHTML = showRating(3);
+    document.getElementById("skill-rating-linux").innerHTML = showRating(3);
+    document.getElementById("skill-rating-mongodb").innerHTML = showRating(3);
 
 });
 

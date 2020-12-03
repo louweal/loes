@@ -1,19 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
 
-@import "./variables";
-@import "./mixins";
+@import "_variables";
+@import "_mixins";
 
 /* global styles */
-@import "./elements";
-@import "./utilities";
-@import "./header";
+@import "_elements";
+@import "_utilities";
+@import "_header";
 
 
 /* page styles */
-@import "./index";
-@import "./about";
-@import "./portfolio";
-@import "./project";
-@import "./skills"; 
-@import "./contact";
+@import "_index";
+@import "_about";
+@import "_portfolio";
+@import "_project";
+@import "_skills"; 
+@import "_contact";

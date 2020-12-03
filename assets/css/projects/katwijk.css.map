@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AACA,AAAA,QAAQ,CAAC,QAAQ;AACjB,QAAQ,CAAC,OAAO,CAAC;EACb,gBAAgB,EAAE,OAAO;CAC5B;;AAED,AAAA,QAAQ,CAAC,OAAO,CAAC,GAAG,CAAC;EACjB,gBAAgB,EAAE,KAAK;EACvB,WAAW,CAAA,QAAC;EACZ,SAAS,EAAE,sCAAsC;CACpD",
-    "sources": [
-        "katwijk.scss"
-    ],
-    "names": [],
-    "file": "katwijk.css"
-}
