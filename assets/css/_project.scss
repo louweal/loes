@@ -73,6 +73,11 @@
 @import './projects/_memini';
 @import './projects/_katwijk';
 
+
+.loes .mobile {
+    overflow-y: hidden;
+}
+
 @media only screen and (max-width: 600px) {
     .project {
         width: 95%;

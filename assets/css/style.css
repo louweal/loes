@@ -855,6 +855,10 @@ nav ul li {
           animation: variable-scroll-down 25s 0.5s ease-out;
 }
 
+.loes .mobile {
+  overflow-y: hidden;
+}
+
 @media only screen and (max-width: 600px) {
   .project {
     width: 95%;
