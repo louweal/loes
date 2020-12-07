@@ -10,18 +10,16 @@
 
     svg path {
         opacity: 0.2;
-    }
-    svg path.l {
-        animation: toFullOpacity linear 0.5s forwards;
-    }
-    svg path.o {
-        animation: toFullOpacity linear 0.5s 0.5s forwards;
-    }
-    svg path.e {
-        animation: toFullOpacity linear 0.5s 1s forwards;
-    }
-    svg path.s {
-        animation: toFullOpacity linear 0.5s 1.5s forwards;
+        animation-name: toFullOpacity;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+        animation-duration: 0.5s;
+
+        @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+                animation-delay: ($i - 1) * 0.5s;
+            }
+        }
     }
 
     h1 {
@@ -37,18 +35,16 @@
         transform-origin: bottom center;
         transform: translateY(60px);
         border-bottom: 3px solid $teal;
-    }
-
-    h2.front {
-        animation: slideUp 1s 3.5s ease-out forwards;
-    }
-
-    h2.ux {
-        animation: slideUp 1s 4.5s ease-out forwards;
-    }
-
-    h2.web {
-        animation: slideUp 1s 5.5s ease-out forwards;
+        animation-name: slideUp;
+        animation-timing-function: ease-out;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        
+        @for $i from 2 through 4 {
+            &:nth-child(#{$i}) {
+                animation-delay: ($i - 1) + 2.5s;
+            }
+        }    
     }
 
     .button {
@@ -74,19 +70,14 @@
     .hero {
         width: 343px;
         margin: 0 auto;
-
-        h2.front {
-            animation: slideUp 1s 0.5s ease-out forwards;
+        h2 {
+            @for $i from 2 through 4 {
+                &:nth-child(#{$i}) {
+                    animation-delay: ($i - 2) + 0.5s;
+                }
+            }
         }
 
-        h2.ux {
-            animation: slideUp 1s 1.5s ease-out forwards;
-        }
-
-        h2.web {
-            animation: slideUp 1s 2.5s ease-out forwards;
-        }
-    
         .button {
             /* View portfolio button */
             transform-origin: center center;
@@ -104,7 +95,6 @@
         padding-top: 45px;
         animation: toFullOpacity ease-in 1s 0.5s forwards;
     }
-
 }
 
 @media only screen and (min-width: 601px) {
@@ -116,8 +106,6 @@
         animation: move-left ease-in-out 2s 1.9s forwards;
     }
 }
-
-
 
 /* homepage animations */
 @keyframes move-left {
@@ -135,16 +123,5 @@
     /* mobile logo animation */
     to {
         opacity: 0;
-    }
-}
-
-@keyframes slideUp {
-    /* h2 text animation */
-    75% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
     }
 }
