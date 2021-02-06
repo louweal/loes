@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById("skill-rating-html5").innerHTML = showRating(4);
     document.getElementById("skill-rating-css3").innerHTML = showRating(4);
     document.getElementById("skill-rating-js").innerHTML = showRating(3);
+    document.getElementById("skill-rating-vuejs").innerHTML = showRating(2);
     document.getElementById("skill-rating-nodejs").innerHTML = showRating(3);
     document.getElementById("skill-rating-figma").innerHTML = showRating(3);
     document.getElementById("skill-rating-wordpress").innerHTML = showRating(3);
