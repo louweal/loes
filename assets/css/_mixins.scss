@@ -1,8 +1,0 @@
-@mixin page-container($width) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: 20px auto;
-    width: $width;
-}
